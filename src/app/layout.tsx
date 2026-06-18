@@ -5,7 +5,6 @@ import Navbar from "@/components/layout/Navbar";
 import SparkleCursor from "@/components/ui/SparkleCursor";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import ScrollProgress from "@/components/ui/ScrollProgress";
-import PageLoader from "@/components/ui/PageLoader";
 
 export const metadata: Metadata = {
   title: "Motswedi Rehabilitation Centre",
@@ -20,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <PageLoader />
+        
         <ScrollProgress />
         <SparkleCursor />
         <Navbar />
