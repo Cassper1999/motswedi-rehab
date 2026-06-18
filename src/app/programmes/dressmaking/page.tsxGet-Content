@@ -1,0 +1,211 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export default function DressmakingPage() {
+return ( <main className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#f3efe6] via-[#e8f7ef] to-[#dff4ff] pt-36">
+
+```
+  <section className="mx-auto max-w-7xl px-8">
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="max-w-4xl"
+    >
+      <p className="font-bold uppercase tracking-widest text-[#7ab648]">
+        Vocational Training Programme
+      </p>
+
+      <h1 className="mt-4 text-6xl font-black text-[#014d57] leading-tight">
+        Skills and Dressmaking
+      </h1>
+
+      <div className="mt-6 h-1 w-24 rounded-full bg-cyan-400" />
+
+      <p className="mt-8 text-xl leading-relaxed text-gray-700">
+        The Skills and Dressmaking Programme at Motswedi Rehabilitation
+        Centre is a full-time, two-year vocational training programme
+        designed to equip persons with disabilities with practical and
+        theoretical skills in garment construction and tailoring.
+      </p>
+    </motion.div>
+
+    <div className="mt-20 grid gap-8 md:grid-cols-3">
+
+      <div className="rounded-[32px] bg-white p-8 shadow-xl">
+        <h3 className="font-bold text-[#014d57]">Duration</h3>
+        <p className="mt-4 text-gray-600">2 Years</p>
+      </div>
+
+      <div className="rounded-[32px] bg-white p-8 shadow-xl">
+        <h3 className="font-bold text-[#014d57]">Accreditation</h3>
+        <p className="mt-4 text-gray-600">
+          Botswana Qualifications Authority (BQA)
+        </p>
+      </div>
+
+      <div className="rounded-[32px] bg-white p-8 shadow-xl">
+        <h3 className="font-bold text-[#014d57]">Training Type</h3>
+        <p className="mt-4 text-gray-600">
+          Practical & Theoretical Instruction
+        </p>
+      </div>
+
+    </div>
+
+    <section className="mt-24">
+      <div className="rounded-[2rem] bg-white p-10 shadow-xl">
+
+        <h2 className="text-3xl font-bold text-[#014d57]">
+          Programme Overview
+        </h2>
+
+        <p className="mt-6 text-lg leading-relaxed text-gray-600">
+          The programme is registered and accredited by the Botswana
+          Qualifications Authority (BQA), ensuring training meets national
+          vocational standards. Learners receive both practical and
+          theoretical instruction that prepares them for meaningful
+          participation in the textile and clothing industry.
+        </p>
+
+      </div>
+    </section>
+
+    <section className="mt-12">
+      <div className="rounded-[2rem] bg-white p-10 shadow-xl">
+
+        <h2 className="text-3xl font-bold text-[#014d57]">
+          Target Group
+        </h2>
+
+        <ul className="mt-6 space-y-4 text-lg text-gray-600">
+          <li>• Trainable youth with moderate intellectual disabilities</li>
+          <li>• Able to communicate verbally</li>
+          <li>• Able to understand and follow instructions</li>
+          <li>• Able to handle tools and materials safely</li>
+          <li>• Able to remain active and engaged during training</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section className="mt-12">
+      <div className="rounded-[2rem] bg-white p-10 shadow-xl">
+
+        <h2 className="text-3xl font-bold text-[#014d57]">
+          Training & Assessment
+        </h2>
+
+        <ul className="mt-6 space-y-4 text-lg text-gray-600">
+          <li>
+            • Continuous practical and theoretical training throughout the
+            two-year programme
+          </li>
+
+          <li>
+            • Final examinations conducted at the end of the programme
+          </li>
+
+          <li>
+            • Assessment carried out by BQA registered and accredited
+            assessors
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section className="mt-12 rounded-[2rem] bg-[#014d57] p-12 text-white">
+
+      <h2 className="text-4xl font-black">
+        Industrial Attachment
+      </h2>
+
+      <p className="mt-6 text-lg text-white/80">
+        To strengthen workplace readiness, trainees participate in
+        industrial attachment placements for two weeks before final
+        examinations and two weeks after final examinations.
+      </p>
+
+      <p className="mt-4 text-lg text-white/80">
+        These placements provide real-world experience and build confidence
+        in applying acquired skills within professional work environments.
+      </p>
+
+    </section>
+
+    <section className="mt-24">
+      <div className="rounded-[2rem] bg-white p-10 shadow-xl">
+
+        <h2 className="text-3xl font-bold text-[#014d57]">
+          Programme Impact
+        </h2>
+
+        <p className="mt-6 text-lg leading-relaxed text-gray-600">
+          The programme equips graduates with practical vocational skills
+          that increase employability and support quicker entry into the
+          workforce compared to traditional academic pathways.
+        </p>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+
+          <div className="rounded-2xl bg-[#f7f7f7] p-6">
+            Reduced unemployment among persons with disabilities
+          </div>
+
+          <div className="rounded-2xl bg-[#f7f7f7] p-6">
+            Increased independence and self-reliance
+          </div>
+
+          <div className="rounded-2xl bg-[#f7f7f7] p-6">
+            Income generation opportunities
+          </div>
+
+          <div className="rounded-2xl bg-[#f7f7f7] p-6">
+            Entrepreneurship and broader economic participation
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section className="mt-12 mb-24">
+      <div className="rounded-[2rem] bg-white p-10 shadow-xl">
+
+        <h2 className="text-3xl font-bold text-[#014d57]">
+          Career Opportunities
+        </h2>
+
+        <p className="mt-6 text-lg text-gray-600">
+          Graduates are prepared for diverse career pathways including:
+        </p>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+
+          <div className="rounded-2xl bg-[#f7f7f7] p-6">
+            Employment in Dressmaking Businesses
+          </div>
+
+          <div className="rounded-2xl bg-[#f7f7f7] p-6">
+            Self Employment
+          </div>
+
+          <div className="rounded-2xl bg-[#f7f7f7] p-6">
+            Small Scale Production Ventures
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </section>
+
+</main>
+```
+
+);
+}
