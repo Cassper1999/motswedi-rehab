@@ -507,9 +507,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mx-auto mt-8 max-w-7xl border-t border-white/10 pt-5 text-center text-xs text-white/50">
-          © {new Date().getFullYear()} Motswedi Rehabilitation Centre. All rights reserved.
-        </div>
+        <div className="mx-auto mt-8 max-w-7xl border-t border-white/10 pt-5 text-center">
+  <p className="text-xs text-white/50">
+    © {new Date().getFullYear()} Motswedi Rehabilitation Centre. All rights reserved.
+  </p>
+
+  <p className="mt-3 text-[11px] font-black uppercase tracking-[0.28em] text-white/65">
+    DONATED BY LESEDI TRUST
+  </p>
+</div>
       </footer>
     </main>
   );
