@@ -29,12 +29,18 @@ export default function ContactPage() {
         "service_uho5pxv",
         "template_wkfnr29",
         {
-          from_name: name,
-          from_email: email,
-          reply_to: email,
-          subject: subject,
-          message: message,
-        },
+  from_name: name,
+  from_email: email,
+  reply_to: email,
+
+  to_name: name,
+  to_email: email,
+
+  admin_email: "shalomkrex@gmail.com",
+
+  subject: subject,
+  message: message,
+},
         {
           publicKey: "dps-Qy8lSOsyG7byg",
         }
