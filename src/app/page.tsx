@@ -238,10 +238,7 @@ export default function Home() {
           </h2>
 
           <p className="mt-6 text-base leading-relaxed text-gray-600 md:text-lg">
-            Motswedi Rehabilitation Centre provides rehabilitation,
-            physiotherapy, education support, vocational skills training and
-            empowerment programmes that promote independence, dignity and
-            meaningful participation in society.
+            Get to know the heart of Motswedi Rehabilitation Centre and see how our dedication to care, inclusion, and empowerment is changing lives every day.
           </p>
 
           <Link
