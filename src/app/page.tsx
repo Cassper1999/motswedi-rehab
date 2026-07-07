@@ -167,10 +167,7 @@ export default function Home() {
               transition={{ delay: 1.1, duration: 0.8 }}
               className="mt-6 text-base font-medium leading-relaxed text-gray-800 md:text-xl"
             >
-              Motswedi Rehabilitation Centre is a project of the Mother’s Union
-              of the Dutch Reformed Church in Botswana-Mochudi Congregation.
-              The Community Based Rehabilitation Programme started in 1988 and
-              the centre was officially opened in 1995.
+              Motswedi Rehabilitation Centre provides rehabilitation, physiotherapy, education support, vocational skills training and empowerment programmes that promote independence, dignity and meaningful participation in society.
             </motion.p>
 
             <motion.div

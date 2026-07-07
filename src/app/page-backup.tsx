@@ -18,10 +18,7 @@ export default function Home() {
               OF HOPE
             </h1>
             <p className="mt-8 text-lg text-gray-600 max-w-xl">
-              Motswedi Rehabilitation Centre is a project of the Mother’s Union of the Dutch Reformed 
-Church in Botswana-Mochudi Congregation. The Community based Rehabilitation 
-programme started in 1988 and the centre was officially opened in 1995. Motswedi means 
-a “Fountain”. For us it is a fountain of Hope. 
+              Motswedi Rehabilitation Centre provides rehabilitation, physiotherapy, education support, vocational skills training and empowerment programmes that promote independence, dignity and meaningful participation in society.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <button className="rounded-full bg-[var(--primary)] px-8 py-4 font-semibold text-white">
