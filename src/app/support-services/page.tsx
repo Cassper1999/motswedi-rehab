@@ -15,11 +15,6 @@ description:
 "Delivers outreach clinics and home visits across Kgatleng District, bringing rehabilitation services directly into communities.",
 },
 {
-title: "Group Therapy",
-description:
-"Monthly therapy sessions that encourage rehabilitation, caregiver support, peer learning and social inclusion.",
-},
-{
 title: "In-Home Physiotherapy",
 description:
 "Individualised physiotherapy for children in the stimulation programme, focusing on mobility and independence.",

@@ -12,7 +12,7 @@ const programmes = [
   },
   {
     title: "Skills & Dressmaking",
-    image: "/images/programmes/motswediteach.webp",
+    image: "/images/programmes/skillsanddressmaking.webp",
     href: "/programmes/dressmaking",
   },
   {
@@ -22,12 +22,12 @@ const programmes = [
   },
   {
     title: "Carpentry & Joinery",
-    image: "/images/programmes/motswedioutside.webp",
+    image: "/images/programmes/carpentry.webp",
     href: "/programmes/carpentry",
   },
   {
     title: "Horticulture",
-    image: "/images/programmes/motswediclassroom.webp",
+    image: "/images/programmes/horticulture.webp",
     href: "/programmes/horticulture",
   },
   {

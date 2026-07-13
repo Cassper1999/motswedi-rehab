@@ -182,19 +182,15 @@ export default function ProjectsPage() {
 
           <PremiumTile className="mt-0">
             <h2 className="text-3xl font-bold text-[#014d57]">
-              Fish Farming Project
+              Fish Rearing Project
             </h2>
 
             <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
-              The Fish Farming Project is a newly established initiative focused
-              on sustainable income generation through agriculture and long-term
-              project development.
+              As part of its commitment to sustainability and income generation, Motswedi Rehabilitation Centre operates a fish-rearing project that contributes towards supporting the centre’s programmes and services. The project involves purchasing young fish and raising them under suitable conditions until they reach market size and weight for sale.
             </p>
 
             <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
-              The centre is currently breeding fish and preparing for future
-              production that will contribute towards programme development and
-              operational sustainability.
+              The project provides an opportunity for the centre to generate additional income that can be used to strengthen rehabilitation services, vocational training programmes, and the daily operations of the centre. It also serves as a practical learning platform where trainees can develop skills related to animal care, environmental management, responsibility, and basic business practices.
             </p>
           </PremiumTile>
 
