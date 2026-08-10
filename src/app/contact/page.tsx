@@ -133,38 +133,73 @@ export default function ContactPage() {
         </section>
 
         {/* CONTACT CARDS */}
-        <section className="pb-10">
-          <div className="mx-auto max-w-7xl px-8">
-            <div className="grid gap-3 md:grid-cols-3">
-              {[
-                { title: "Phone", text: "+267 5729340" },
-                { title: "Email", text: "motswedirehab@btcmail.com" },
-                {
-                  title: "Location",
-                  text: "Mochudi, along Raserura Ward, Mochudi-Rasesa Road.",
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="show"
-                  transition={{ duration: 0.6, delay: 0.2 * i }}
-                  whileHover={{ y: -8 }}
-                  className="rounded-3xl bg-white/92 backdrop-blur-md p-10 shadow-sm"
-                >
-                  <h3 className="text-2xl font-bold text-[#014d57]">
-                    {item.title}
-                  </h3>
+<section className="pb-10">
+  <div className="mx-auto max-w-7xl px-8">
+    <div className="grid gap-3 md:grid-cols-3">
+      {[
+        {
+          title: "Phone",
+          text: "+267 5729340",
+        },
+        {
+          title: "Email",
+          text: "motswedirehab@btcmail.co.bw",
+        },
+        {
+          title: "Location",
+          text: "Mochudi, along Raserura Ward, Mochudi-Rasesa Road.",
+        },
+      ].map((item, index) => (
+        <motion.div
+          key={item.title}
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          transition={{
+            duration: 0.6,
+            delay: 0.2 * index,
+          }}
+          whileHover={{ y: -8 }}
+          className="rounded-3xl bg-white/92 p-10 shadow-sm backdrop-blur-md"
+        >
+          <h3 className="text-2xl font-bold text-[#014d57]">
+            {item.title}
+          </h3>
 
-                  <p className="mt-4 md:mt-6 text-base md:text-lg leading-relaxed text-gray-600">
-                    {item.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+         {/* CONTACT CARDS */}
+
+{item.title === "Location" ? (
+  <div className="mt-4 overflow-hidden rounded-2xl border border-[#014d57]/10 md:mt-6">
+    <iframe
+      src="https://www.google.com/maps?q=-24.39107,26.09247&z=16&output=embed"
+      title="Motswedi Rehabilitation Centre location"
+      className="h-64 w-full border-0"
+      loading="lazy"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+
+    <div className="bg-white p-4">
+      <a
+        href="https://www.google.com/maps/dir/?api=1&destination=-24.39107%2C26.09247&travelmode=driving"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex w-full items-center justify-center rounded-xl bg-[#6aa93b] px-5 py-4 text-center font-bold text-white transition hover:bg-[#5f9f34]"
+      >
+        GET DIRECTIONS FROM MY LOCATION →
+      </a>
+    </div>
+  </div>
+) : (
+  <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
+    {item.text}
+  </p>
+)}
+</motion.div>
+))}
+</div>
+  </div>
+</section>
 
         {/* CONTACT FORM */}
         <section className="pb-10">
