@@ -131,7 +131,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="text-sm font-bold uppercase tracking-[0.2em] text-[#7ab648] md:text-base"
             >
-              Motswedi Is A
+              Motswedi Is A Fountain Of Hope
             </motion.p>
 
             <motion.h1 className="mt-3 font-black leading-none">
@@ -141,18 +141,18 @@ export default function Home() {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="block text-5xl text-[#014d57] sm:text-6xl md:text-[90px]"
               >
-                FOUNTAIN
+                MOTSWEDI
               </motion.span>
 
               <motion.span
-                initial={{ opacity: 0, x: 60 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="block text-5xl text-[#7ab648] sm:text-6xl md:text-[90px]"
-              >
-                OF HOPE
-              </motion.span>
-            </motion.h1>
+    initial={{ opacity: 0, x: 60 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ delay: 0.5, duration: 0.8 }}
+    className="block text-[1.65rem] text-[#7ab648] min-[360px]:text-[1.85rem] min-[430px]:text-[2.15rem] sm:text-[2.75rem] md:text-[4rem] lg:text-[4.75rem]"
+  >
+    REHABILITATION CENTRE
+  </motion.span>
+</motion.h1>
 
             <motion.div
               initial={{ width: 0 }}
