@@ -294,123 +294,158 @@ export default function AboutPage() {
         </motion.div>
 
         {/* ORGANISATIONAL STRUCTURE */}
-        <motion.section
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.05 }}
-          transition={{ duration: 0.7 }}
-          className="mt-8 overflow-hidden rounded-[1.5rem] border border-white/70 bg-white/90 p-6 shadow-xl backdrop-blur-md md:mt-12 md:rounded-[2rem] md:p-10"
-        >
-          <div className="text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6aa93b]">
-              Leadership &amp; Departments
-            </p>
+<motion.section
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.05 }}
+  transition={{ duration: 0.7 }}
+  className="mt-8 overflow-hidden rounded-[1.5rem] border border-white/70 bg-white/90 p-5 shadow-xl backdrop-blur-md sm:p-6 md:mt-12 md:rounded-[2rem] md:p-10"
+>
+  <div className="text-center">
+    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#6aa93b] sm:text-sm sm:tracking-[0.2em]">
+      Leadership &amp; Departments
+    </p>
 
-            <h2 className="mt-3 text-3xl font-black text-[#014d57] md:text-4xl">
-              Organisational Structure
-            </h2>
+    <h2 className="mt-3 text-3xl font-black text-[#014d57] md:text-4xl">
+      Organisational Structure
+    </h2>
 
-            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg">
-              Our governance and management structure provides clear
-              oversight, accountability and coordination across every
-              department.
-            </p>
-          </div>
+    <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg">
+      Our governance and management structure provides clear oversight,
+      accountability and coordination across every department.
+    </p>
+  </div>
 
-          <div className="mt-10">
-            {/* BOARD OF TRUSTEES */}
-            <motion.div
-              whileHover={{ y: -4 }}
-              className="relative mx-auto max-w-sm overflow-hidden rounded-2xl bg-gradient-to-br from-[#014d57] via-[#01616d] to-[#028090] px-6 py-5 text-center text-white shadow-[0_18px_45px_rgba(1,77,87,0.24)]"
-            >
-              <div className="absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-[#6aa93b] via-cyan-400 to-white" />
+  <div className="mt-10">
+    {/* BOARD OF TRUSTEES */}
+    <motion.div
+      whileHover={{ y: -4 }}
+      className="relative mx-auto max-w-sm overflow-hidden rounded-2xl bg-gradient-to-br from-[#014d57] via-[#01616d] to-[#028090] px-6 py-5 text-center text-white shadow-[0_18px_45px_rgba(1,77,87,0.24)]"
+    >
+      <div className="absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-[#6aa93b] via-cyan-400 to-white" />
 
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-200">
-                Strategic Oversight
-              </p>
+      <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-200">
+        Strategic Oversight
+      </p>
 
-              <h3 className="mt-2 text-xl font-black">
-                Board of Trustees
-              </h3>
+      <h3 className="mt-2 text-xl font-black">
+        Board of Trustees
+      </h3>
 
-              <p className="mt-2 text-sm leading-relaxed text-white/75">
-                Policy direction, accountability and long-term sustainability.
-              </p>
-            </motion.div>
+      <p className="mt-2 text-sm leading-relaxed text-white/75">
+        Policy direction, accountability and long-term sustainability.
+      </p>
+    </motion.div>
 
-            <div className="mx-auto h-8 w-0.5 bg-gradient-to-b from-[#014d57] to-[#6aa93b]" />
+    <div className="mx-auto h-8 w-0.5 bg-gradient-to-b from-[#014d57] to-[#6aa93b]" />
 
-            {/* COORDINATOR */}
-            <motion.div
-              whileHover={{ y: -4 }}
-              className="relative mx-auto max-w-sm overflow-hidden rounded-2xl border-2 border-[#6aa93b]/40 bg-[#eef8e9] px-6 py-5 text-center shadow-[0_14px_35px_rgba(106,169,59,0.16)]"
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6aa93b]">
-                Centre Management
-              </p>
+    {/* COORDINATOR */}
+    <motion.div
+      whileHover={{ y: -4 }}
+      className="relative mx-auto max-w-sm overflow-hidden rounded-2xl border-2 border-[#6aa93b]/40 bg-[#eef8e9] px-6 py-5 text-center shadow-[0_14px_35px_rgba(106,169,59,0.16)]"
+    >
+      <div className="absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-[#014d57] via-[#6aa93b] to-cyan-400" />
 
-              <h3 className="mt-2 text-xl font-black text-[#014d57]">
-                Coordinator
-              </h3>
+      <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6aa93b]">
+        Centre Management
+      </p>
 
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                Programmes, staff, partnerships, reporting and daily
-                operations.
-              </p>
-            </motion.div>
+      <h3 className="mt-2 text-xl font-black text-[#014d57]">
+        Coordinator
+      </h3>
 
-            <div className="mx-auto h-8 w-0.5 bg-gradient-to-b from-[#6aa93b] to-cyan-400" />
+      <p className="mt-2 text-sm leading-relaxed text-gray-600">
+        Programmes, staff, partnerships, reporting and daily operations.
+      </p>
+    </motion.div>
 
-            {/* PHYSIOTHERAPIST */}
-            <motion.div
-              whileHover={{ y: -4 }}
-              className="mx-auto max-w-sm rounded-2xl border-2 border-[#014d57]/25 bg-white px-6 py-5 text-center shadow-[0_14px_35px_rgba(1,77,87,0.12)]"
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6aa93b]">
-                Professional Leadership
-              </p>
+    <div className="mx-auto h-8 w-0.5 bg-gradient-to-b from-[#6aa93b] to-[#014d57]/30" />
 
-              <h3 className="mt-2 text-xl font-black text-[#014d57]">
-                Physiotherapist
-              </h3>
-            </motion.div>
+    {/* MOBILE REPORTING LABEL */}
+    <div className="mx-auto mb-6 max-w-sm rounded-full border border-[#014d57]/15 bg-[#eef8e9] px-5 py-3 text-center text-xs font-black uppercase tracking-[0.16em] text-[#014d57] lg:hidden">
+      Departments Reporting to the Coordinator
+    </div>
 
-            <div className="mx-auto h-8 w-0.5 bg-[#014d57]/30" />
+    {/* DEPARTMENTS */}
+    <div className="relative mx-auto max-w-6xl">
+      {/* DESKTOP CONNECTING LINE */}
+      <div className="absolute left-[16.666%] right-[16.666%] top-0 hidden h-0.5 bg-[#014d57]/30 lg:block" />
 
-            <div className="mx-auto mb-6 max-w-sm rounded-full border border-[#014d57]/15 bg-[#eef8e9] px-5 py-3 text-center text-xs font-black uppercase tracking-[0.2em] text-[#6aa93b]">
-              Departments &amp; Reporting Lines
+      <div className="grid gap-6 lg:grid-cols-3 lg:items-stretch">
+        {[
+          {
+            department: "Physiotherapy",
+            units: ["Rehabilitation", "Hostel"],
+          },
+          {
+            department: "Programmes",
+            units: [
+              "Stimulation",
+              "Carpentry & Joinery",
+              "Horticulture",
+              "Dressmaking and Tailoring",
+              "Cookery and Housekeeping",
+            ],
+          },
+          {
+            department: "Administration",
+            units: [
+              "Accounts",
+              "Stores",
+              "Transport",
+              "Kitchen",
+              "Cleaning",
+              "Grounds",
+            ],
+          },
+        ].map((branch, index) => (
+          <motion.article
+            key={branch.department}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.08,
+            }}
+            whileHover={{ y: -5 }}
+            className="relative h-full lg:pt-8"
+          >
+            {/* DESKTOP VERTICAL CONNECTOR */}
+            <div className="absolute left-1/2 top-0 hidden h-8 w-0.5 -translate-x-1/2 bg-[#014d57]/30 lg:block" />
+
+            <div className="h-full overflow-hidden rounded-2xl border border-[#014d57]/10 bg-[#f7fbf5] shadow-[0_16px_42px_rgba(1,77,87,0.12)]">
+              <div className="relative overflow-hidden bg-gradient-to-br from-[#014d57] via-[#01616d] to-[#028090] px-5 py-5 text-center text-white">
+                <div className="absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-[#6aa93b] via-cyan-400 to-white" />
+
+                <h3 className="text-lg font-black uppercase tracking-[0.05em]">
+                  {branch.department}
+                </h3>
+              </div>
+
+              <div
+                className={`grid gap-3 p-4 ${
+                  branch.units.length > 2
+                    ? "sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"
+                    : ""
+                }`}
+              >
+                {branch.units.map((unit) => (
+                  <div
+                    key={unit}
+                    className="flex min-h-[4rem] items-center justify-center rounded-xl border border-[#014d57]/10 bg-white px-4 py-4 text-center text-sm font-bold leading-snug text-[#014d57] shadow-sm"
+                  >
+                    {unit}
+                  </div>
+                ))}
+              </div>
             </div>
-
-            {/* DEPARTMENTS */}
-            <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-4 lg:items-start">
-              {organisationBranches.map((branch, index) => (
-                <motion.div
-                  key={branch.department}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.04,
-                  }}
-                  className={
-                    branch.department === "Administration"
-                      ? "lg:col-span-2 lg:row-start-2"
-                      : branch.department === "ICT"
-                        ? "lg:col-start-3 lg:row-start-2"
-                        : branch.department === "Skills/Ability Training"
-                          ? "lg:col-start-4 lg:row-start-2"
-                          : branch.department === "Agriculture"
-                            ? "lg:col-span-2 lg:col-start-2 lg:row-start-3"
-                            : ""
-                  }
-                >
-                  <DepartmentBranch branch={branch} />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
+          </motion.article>
+        ))}
+      </div>
+    </div>
+  </div>
+</motion.section>
 
         {/* STATS */}
         <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-3 md:gap-8">

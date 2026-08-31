@@ -141,7 +141,7 @@ export default function StimulationPage() {
             <div className="rounded-2xl border border-[#014d57]/10 bg-gradient-to-br from-white to-[#f7fbfc] p-6 shadow-sm">
               <h3 className="font-bold text-[#014d57]">Age Group</h3>
               <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
-                4–10 Years
+                4–9 Years
               </p>
             </div>
 
@@ -193,9 +193,10 @@ export default function StimulationPage() {
           </h2>
 
           <ul className="mt-4 space-y-3 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
-            <li>• Child medical card, 0–5 years</li>
+            <li>• Child medical card, 4–9 years</li>
             <li>• Psychometric assessment by a recognised educational psychologist</li>
             <li>• Copy of the child&apos;s birth certificate</li>
+            <li>• Under 5 Birth Medical Card</li>
             <li>• Parent or caregiver involvement during the process</li>
           </ul>
         </PremiumTile>
