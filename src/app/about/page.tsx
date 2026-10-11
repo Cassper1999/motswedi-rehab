@@ -272,28 +272,83 @@ export default function AboutPage() {
           </ul>
         </motion.div>
 
-        {/* COMMUNITY */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-          className="mt-8 rounded-[1.5rem] bg-white/90 p-6 shadow-xl backdrop-blur-md md:mt-12 md:rounded-[2rem] md:p-10"
-        >
-          <h2 className="text-2xl font-bold text-[#014d57] md:text-3xl">
-            The Community We Serve
-          </h2>
+       {/* COMMUNITY */}
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 0.7 }}
+  className="mt-8 rounded-[1.5rem] bg-white/90 p-6 shadow-xl backdrop-blur-md md:mt-12 md:rounded-[2rem] md:p-10"
+>
+  <h2 className="text-2xl font-bold text-[#014d57] md:text-3xl">
+    The Community We Serve
+  </h2>
 
-          <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
-            Motswedi Rehabilitation Centre serves children, youth and adults
-            living with disabilities in Mochudi and surrounding communities
-            across Botswana. We work closely with families, caregivers,
-            schools, government, churches and stakeholders to promote
-            inclusion and quality of life.
-          </p>
-        </motion.div>
+  <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
+    Motswedi Rehabilitation Centre serves children, youth and adults living
+    with disabilities in Mochudi and surrounding communities across Botswana.
+    We work closely with families, caregivers, schools, government, churches
+    and stakeholders to promote inclusion and quality of life.
+  </p>
+</motion.div>
 
-        {/* ORGANISATIONAL STRUCTURE */}
+{/* MISSION, VISION, GOAL AND CORE VALUES */}
+<motion.article
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.7 }}
+  className="mt-8 rounded-[1.5rem] border border-white/70 bg-white/90 p-6 shadow-xl backdrop-blur-md md:mt-12 md:rounded-[2rem] md:p-10"
+>
+  <div className="grid gap-8 md:grid-cols-2 md:gap-x-12 md:gap-y-10">
+    <section>
+      <h2 className="text-2xl font-black text-[#014d57] md:text-3xl">
+        Our Mission
+      </h2>
+
+      <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
+        To provide integrated training with production and comprehensive
+        rehabilitation services for people with intellectual and physical
+        disabilities to enable them achieve maximum potential.
+      </p>
+    </section>
+
+    <section>
+      <h2 className="text-2xl font-black text-[#014d57] md:text-3xl">
+        Our Vision
+      </h2>
+
+      <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
+        Motswedi Rehabilitation Centre will be a centre of excellence in
+        inclusive education and integrated productive rehabilitation.
+      </p>
+    </section>
+
+    <section>
+      <h2 className="text-2xl font-black text-[#014d57] md:text-3xl">
+        Our Goal
+      </h2>
+
+      <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
+        To enable people with intellectual and physical disabilities achieve
+        their full potential through rehabilitation, education and skills
+        training.
+      </p>
+    </section>
+
+    <section>
+      <h2 className="text-2xl font-black text-[#014d57] md:text-3xl">
+        Core Values
+      </h2>
+
+      <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
+        Botho, Teamwork, Customer Satisfaction and Employee Empowerment.
+      </p>
+    </section>
+  </div>
+</motion.article>
+
+{/* ORGANISATIONAL STRUCTURE */}
 <motion.section
   initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -328,9 +383,7 @@ export default function AboutPage() {
         Strategic Oversight
       </p>
 
-      <h3 className="mt-2 text-xl font-black">
-        Board of Trustees
-      </h3>
+      <h3 className="mt-2 text-xl font-black">Board of Trustees</h3>
 
       <p className="mt-2 text-sm leading-relaxed text-white/75">
         Policy direction, accountability and long-term sustainability.
@@ -446,7 +499,6 @@ export default function AboutPage() {
     </div>
   </div>
 </motion.section>
-
         {/* STATS */}
         <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-3 md:gap-8">
           {[
@@ -488,66 +540,7 @@ export default function AboutPage() {
               <p className="mt-3 text-gray-600">{item.text}</p>
             </motion.div>
           ))}
-        </div>
-
-        {/* MISSION, VISION, GOAL AND CORE VALUES */}
-        <motion.article
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="mt-8 rounded-[1.5rem] border border-white/70 bg-white/90 p-6 shadow-xl backdrop-blur-md md:mt-12 md:rounded-[2rem] md:p-10"
-        >
-          <div className="grid gap-8 md:grid-cols-2 md:gap-x-12 md:gap-y-10">
-            <section>
-              <h2 className="text-2xl font-black text-[#014d57] md:text-3xl">
-                Our Mission
-              </h2>
-
-              <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
-                To provide integrated training with production and
-                comprehensive rehabilitation services for people with
-                intellectual and physical disabilities to enable them achieve
-                maximum potential.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-black text-[#014d57] md:text-3xl">
-                Our Vision
-              </h2>
-
-              <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
-                Motswedi Rehabilitation Centre will be a centre of excellence
-                in inclusive education and integrated productive
-                rehabilitation.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-black text-[#014d57] md:text-3xl">
-                Our Goal
-              </h2>
-
-              <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
-                To enable people with intellectual and physical disabilities
-                achieve their full potential through rehabilitation, education
-                and skills training.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-black text-[#014d57] md:text-3xl">
-                Core Values
-              </h2>
-
-              <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
-                Botho, Teamwork, Customer Satisfaction and Employee
-                Empowerment.
-              </p>
-            </section>
-          </div>
-        </motion.article>
+               </div>
       </section>
     </main>
   );

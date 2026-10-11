@@ -11,6 +11,10 @@ const links = [
   { name: "About", href: "/about" },
   { name: "Programmes", href: "/programmes" },
   { name: "Support Services", href: "/support-services" },
+  {
+    name: "Centre Facilities and Services",
+    href: "/centre-facilities-and-services",
+  },
   { name: "Impact", href: "/impact" },
   { name: "Projects", href: "/projects" },
   { name: "Get Involved", href: "/get-involved" },
@@ -40,7 +44,7 @@ export default function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         className={`
-          relative mx-auto flex max-w-7xl items-center justify-between
+          relative mx-auto flex max-w-[1400px] items-center justify-between
           rounded-[1.7rem] border px-5 py-4 transition-all duration-500 md:px-7
           ${
             scrolled
@@ -53,20 +57,20 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="flex items-center"
+          className="flex shrink-0 items-center bg-transparent"
         >
           <Image
-            src="/logos/motswedilogo.png"
+            src="/logos/motswedilogo-transparent.png"
             alt="Motswedi Rehabilitation Centre"
-            width={170}
-            height={70}
+            width={96}
+            height={96}
             priority
-            className="h-auto w-36 md:w-40"
+            className="h-10 w-10 bg-transparent object-contain md:h-16 md:w-16"
           />
         </Link>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-3 xl:flex 2xl:gap-5">
           {links.map((link) => {
             const active = pathname === link.href;
 
@@ -74,13 +78,15 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group relative text-sm font-semibold text-[#062f36] transition hover:text-[#6aa93b]"
+                className="group relative whitespace-nowrap text-sm font-semibold text-[#062f36] transition hover:text-[#6aa93b] 2xl:text-[15px]"
               >
                 {link.name}
 
                 <span
                   className={`
-                    absolute -bottom-2 left-0 h-[3px] rounded-full bg-gradient-to-r from-[#7ab648] to-cyan-400 transition-all duration-300
+                    absolute -bottom-2 left-0 h-[3px] rounded-full
+                    bg-gradient-to-r from-[#7ab648] to-cyan-400
+                    transition-all duration-300
                     ${active ? "w-full" : "w-0 group-hover:w-full"}
                   `}
                 />
@@ -90,10 +96,10 @@ export default function Navbar() {
         </nav>
 
         {/* DESKTOP CTA */}
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center xl:flex">
           <Link
             href="/contact"
-            className="rounded-2xl bg-[#6aa93b] px-6 py-3 text-sm font-bold text-white shadow-[0_16px_40px_rgba(106,169,59,0.35)] transition hover:-translate-y-0.5 hover:bg-[#5f9f34]"
+            className="rounded-2xl bg-[#6aa93b] px-5 py-3 text-sm font-bold text-white shadow-[0_16px_40px_rgba(106,169,59,0.35)] transition hover:-translate-y-0.5 hover:bg-[#5f9f34] 2xl:px-6 2xl:text-[15px]"
           >
             Need Assistance?
           </Link>
@@ -104,24 +110,30 @@ export default function Navbar() {
           type="button"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
-          className="relative z-[60] flex h-12 w-12 items-center justify-center rounded-2xl border border-white/70 bg-white/80 shadow-[0_15px_40px_rgba(1,77,87,0.18)] backdrop-blur-md lg:hidden"
+          aria-expanded={open}
+          className="relative z-[60] flex h-12 w-12 items-center justify-center rounded-2xl border border-white/70 bg-white/80 shadow-[0_15px_40px_rgba(1,77,87,0.18)] backdrop-blur-md xl:hidden"
         >
           <div className="relative h-5 w-6">
             <span
               className={`
-                absolute left-0 top-0 h-[3px] w-6 rounded-full bg-[#014d57] transition-all duration-300
+                absolute left-0 top-0 h-[3px] w-6 rounded-full
+                bg-[#014d57] transition-all duration-300
                 ${open ? "translate-y-2 rotate-45" : ""}
               `}
             />
+
             <span
               className={`
-                absolute left-0 top-2 h-[3px] w-6 rounded-full bg-[#014d57] transition-all duration-300
+                absolute left-0 top-2 h-[3px] w-6 rounded-full
+                bg-[#014d57] transition-all duration-300
                 ${open ? "opacity-0" : "opacity-100"}
               `}
             />
+
             <span
               className={`
-                absolute left-0 top-4 h-[3px] w-6 rounded-full bg-[#014d57] transition-all duration-300
+                absolute left-0 top-4 h-[3px] w-6 rounded-full
+                bg-[#014d57] transition-all duration-300
                 ${open ? "-translate-y-2 -rotate-45" : ""}
               `}
             />
@@ -136,14 +148,14 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -12, scale: 0.96 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="absolute right-0 top-[82px] z-50 w-[min(88vw,350px)] lg:hidden"
+              className="absolute right-0 top-[82px] z-50 w-[min(88vw,370px)] xl:hidden"
             >
               <div className="absolute -top-2 right-6 h-4 w-4 rotate-45 border-l border-t border-white/70 bg-white/95" />
 
               <div className="overflow-hidden rounded-[1.8rem] border border-white/70 bg-white/95 shadow-[0_30px_90px_rgba(1,77,87,0.28)] backdrop-blur-xl">
                 <div className="h-1.5 bg-gradient-to-r from-[#7ab648] via-cyan-400 to-[#014d57]" />
 
-                <div className="p-3">
+                <div className="max-h-[68vh] overflow-y-auto p-3">
                   <p className="px-4 pb-2 pt-2 text-xs font-black uppercase tracking-[0.22em] text-[#7ab648]">
                     Navigation
                   </p>
@@ -158,7 +170,8 @@ export default function Navbar() {
                           href={link.href}
                           onClick={() => setOpen(false)}
                           className={`
-                            group flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] transition-all duration-300
+                            group flex items-center justify-between rounded-2xl
+                            px-4 py-3 text-[15px] transition-all duration-300
                             ${
                               active
                                 ? "bg-[#eef8e9] font-black text-[#6aa93b]"
@@ -170,7 +183,7 @@ export default function Navbar() {
 
                           <span
                             className={`
-                              transition-all duration-300
+                              ml-3 shrink-0 transition-all duration-300
                               ${
                                 active
                                   ? "translate-x-0 opacity-100"
