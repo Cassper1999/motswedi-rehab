@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
+import AboutScrollBackground from "@/components/AboutScrollBackground";
 
 type OrganisationBranch = {
   department: string;
@@ -124,8 +125,11 @@ function DepartmentBranch({
 export default function AboutPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-gradient-to-br from-[#f3efe6] via-[#e8f7ef] to-[#dff4ff] pb-16 pt-28 md:pt-36">
+      {/* SCROLLING BACKGROUND PHOTOS */}
+      <AboutScrollBackground />
+
       {/* BACKGROUND IMAGE */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="hidden">
         <img
           src="/images/about/MOTSWEDIKID.webp"
           alt=""

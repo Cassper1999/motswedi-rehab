@@ -12,7 +12,7 @@ const programmes = [
   },
   {
     title: "Skills & Dressmaking",
-    image: "/images/programmes/skillsanddressmaking.webp",
+    image: "/images/programmes/skills.JPG",
     href: "/programmes/dressmaking",
   },
   {
@@ -22,12 +22,12 @@ const programmes = [
   },
   {
     title: "Carpentry & Joinery",
-    image: "/images/programmes/carpentry.webp",
+    image: "/images/programmes/carp.JPG",
     href: "/programmes/carpentry",
   },
   {
     title: "Horticulture",
-    image: "/images/programmes/horticulture.webp",
+    image: "/images/programmes/garden.jpeg",
     href: "/programmes/horticulture",
   },
   {
@@ -142,4 +142,6 @@ INDEPENDENCE
     </main>
   );
 }
+
+
 

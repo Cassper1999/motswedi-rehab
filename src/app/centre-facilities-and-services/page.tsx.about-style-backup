@@ -1,0 +1,266 @@
+﻿
+"use client";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  ArrowUpRight,
+  BedDouble,
+  UtensilsCrossed,
+  Trophy,
+  ArrowRight,
+  HeartHandshake,
+} from "lucide-react";
+
+const services = [
+  {
+    number: "01",
+    label: "STAY WITH PURPOSE",
+    title: "Accommodation",
+    icon: BedDouble,
+    description:
+      "Motswedi offers accommodation facilities for individuals, groups and organisations seeking convenient and affordable accommodation.",
+    detail:
+      "The facilities may be suitable for visitors, training participants, workshops, community programmes and other organised activities.",
+    closing:
+      "Book your accommodation with Motswedi and support a meaningful cause.",
+    background: "bg-[#f5f7f1]",
+    accent: "text-[#6aa93b]",
+  },
+  {
+    number: "02",
+    label: "FOOD & HOSPITALITY",
+    title: "Catering Services",
+    icon: UtensilsCrossed,
+    description:
+      "Motswedi provides catering services for meetings, workshops, training programmes, events and other functions.",
+    detail:
+      "Our catering services offer convenient and affordable meal options while creating opportunities for skills development and income generation within the Centre.",
+    closing:
+      "Planning an event or meeting? Let Motswedi cater for you.",
+    background: "bg-[#edf3e7]",
+    accent: "text-[#6aa93b]",
+  },
+  {
+    number: "03",
+    label: "SPORT & COMMUNITY",
+    title: "Sports Facilities",
+    icon: Trophy,
+    description:
+      "Motswedi offers sports and recreational facilities that can be hired by schools, community groups, organisations and individuals for sporting activities, training, tournaments and recreational events.",
+    detail:
+      "The facilities provide an opportunity to promote active lifestyles, inclusion and community engagement while generating income to support the Centreâ€™s programmes.",
+    closing:
+      "Hire our sports facilities and help support rehabilitation and inclusion.",
+    background: "bg-[#f5f7f1]",
+    accent: "text-[#6aa93b]",
+  },
+];
+
+export default function CentreFacilitiesPage() {
+  return (
+    <main className="min-h-screen bg-[#fafbf8] text-[#062f36] overflow-hidden">
+
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-[#014d57] px-6 pt-40 pb-24 md:pt-48 md:pb-32">
+        <div className="absolute right-[-100px] top-[-130px] h-[420px] w-[420px] rounded-full border border-white/10 md:h-[680px] md:w-[680px]" />
+        <div className="absolute right-[-40px] top-[-70px] h-[300px] w-[300px] rounded-full border border-[#6aa93b]/30 md:h-[520px] md:w-[520px]" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-4xl"
+          >
+            <p className="mb-7 text-xs font-bold uppercase tracking-[0.3em] text-[#b4df8c]">
+              Motswedi Rehabilitation Centre
+            </p>
+
+            <h1 className="text-5xl font-semibold leading-[1.08] tracking-tight text-white md:text-7xl lg:text-8xl">
+              Facilities
+              <span className="block font-light text-[#b4df8c]">
+                & Services.
+              </span>
+            </h1>
+
+            <div className="mt-10 max-w-3xl border-l-2 border-[#6aa93b] pl-6">
+              <p className="text-base leading-8 text-white/80 md:text-xl md:leading-9">
+                Motswedi Rehabilitation Centre offers a range of
+                services to individuals, organisations, schools,
+                community groups and other clients. Revenue generated
+                from these services contributes towards supporting
+                the Centreâ€™s rehabilitation programmes, skills
+                development and services for children and youth
+                with disabilities.
+              </p>
+            </div>
+
+            <a
+              href="#our-services"
+              className="mt-10 inline-flex items-center gap-3 rounded-full bg-[#6aa93b] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#578d30]"
+            >
+              Explore Our Services
+              <ArrowRight size={18} />
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SERVICE INTRODUCTION */}
+      <section
+        id="our-services"
+        className="mx-auto max-w-7xl px-6 py-20 md:py-28"
+      >
+        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-[#6aa93b]">
+              What We Offer
+            </p>
+            <h2 className="max-w-2xl text-4xl font-semibold tracking-tight md:text-6xl">
+              Services with a
+              <span className="text-[#6aa93b]"> greater purpose.</span>
+            </h2>
+          </div>
+          <p className="max-w-sm text-base leading-7 text-[#53675a]">
+            Discover the facilities and services available
+            at Motswedi Rehabilitation Centre.
+          </p>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="mx-auto max-w-7xl space-y-6 px-6 pb-24">
+        {services.map((service, index) => {
+          const Icon = service.icon;
+
+          return (
+            <motion.article
+              key={service.number}
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.6 }}
+              className={`${service.background} relative overflow-hidden rounded-[2rem] border border-[#dce7d6]`}
+            >
+              <div className="grid min-h-[420px] lg:grid-cols-[0.8fr_1.2fr]">
+                <div className="relative flex flex-col justify-between bg-[#014d57] p-9 text-white md:p-14">
+                  <div className="flex items-start justify-between">
+                    <span className="text-sm font-medium tracking-[0.2em] text-white/60">
+                      {service.number} / 03
+                    </span>
+                    <Icon
+                      size={36}
+                      strokeWidth={1.4}
+                      className="text-[#b4df8c]"
+                    />
+                  </div>
+
+                  <div className="mt-24">
+                    <p className="mb-5 text-xs font-bold tracking-[0.22em] text-[#b4df8c]">
+                      {service.label}
+                    </p>
+                    <h3 className="text-4xl font-semibold tracking-tight md:text-5xl">
+                      {service.title}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="flex flex-col justify-center p-9 md:p-14 lg:p-16">
+                  <div className="max-w-2xl">
+                    <p className="text-lg font-medium leading-8 text-[#062f36] md:text-xl">
+                      {service.description}
+                    </p>
+
+                    <p className="mt-6 text-base leading-8 text-[#53675a]">
+                      {service.detail}
+                    </p>
+
+                    <div className="mt-9 border-t border-[#c9d8c5] pt-7">
+                      <p className="font-semibold leading-7 text-[#397c42]">
+                        {service.closing}
+                      </p>
+                    </div>
+
+                    <Link
+                      href="/contact"
+                      className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#6aa93b] px-6 py-3.5 text-sm font-bold text-[#397c42] transition hover:bg-[#6aa93b] hover:text-white"
+                    >
+                      Make an Enquiry
+                      <ArrowUpRight size={17} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          );
+        })}
+      </section>
+
+      {/* PURPOSE SECTION */}
+      <section className="bg-white px-6 py-24 md:py-32">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+          <div>
+            <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#edf5e7] text-[#6aa93b]">
+              <HeartHandshake size={32} strokeWidth={1.5} />
+            </div>
+
+            <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-[#6aa93b]">
+              Beyond Every Service
+            </p>
+
+            <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+              Supporting a
+              <span className="block text-[#6aa93b]">
+                Greater Purpose.
+              </span>
+            </h2>
+          </div>
+
+          <div className="lg:pl-12">
+            <p className="text-lg leading-9 text-[#53675a]">
+              By using Motswediâ€™s income-generating services,
+              clients are not only receiving quality servicesâ€”they
+              are also contributing to the sustainability of
+              rehabilitation, education, skills development and
+              community-based programmes.
+            </p>
+
+            <div className="mt-9 h-1 w-20 rounded-full bg-[#6aa93b]" />
+
+            <p className="mt-8 text-2xl font-semibold leading-relaxed text-[#062f36] md:text-3xl">
+              Book. Support.
+              <span className="block text-[#6aa93b]">
+                Make a Difference.
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CALL TO ACTION */}
+      <section className="px-6 py-12 md:py-20">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-10 rounded-[2rem] bg-[#014d57] p-9 md:flex-row md:items-center md:p-16">
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#b4df8c]">
+              Get in Touch
+            </p>
+            <h2 className="max-w-xl text-3xl font-semibold leading-tight text-white md:text-5xl">
+              Interested in using our facilities?
+            </h2>
+          </div>
+
+          <Link
+            href="/contact"
+            className="inline-flex shrink-0 items-center gap-3 rounded-full bg-[#6aa93b] px-8 py-4 text-sm font-bold text-white transition hover:bg-[#578d30]"
+          >
+            Contact Motswedi
+            <ArrowUpRight size={18} />
+          </Link>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+

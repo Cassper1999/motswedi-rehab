@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -84,7 +84,7 @@ const programmes = [
   },
   {
     title: "Skills & Dressmaking",
-    image: "/images/programmes/motswediteach.webp",
+    image: "/images/programmes/skills.JPG",
     href: "/programmes/dressmaking",
   },
   {
@@ -104,7 +104,7 @@ export default function Home() {
           initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
           transition={{ duration: 2 }}
-          className="absolute inset-y-0 right-0 w-full md:w-[68%]"
+          className="absolute inset-0 w-full"
         >
           <Image
             src="/images/home/motswedihome.webp"
@@ -114,8 +114,8 @@ export default function Home() {
             className="object-cover object-[center_20%] md:object-center"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f5f1] via-[#f7f5f1]/90 to-[#f7f5f1]/40 md:via-[#f7f5f1]/75 md:to-transparent" />
-          <div className="absolute inset-0 bg-white/25 md:bg-transparent" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,245,241,0.92)_0%,rgba(247,245,241,0.78)_28%,rgba(247,245,241,0.48)_55%,rgba(247,245,241,0.19)_75%,rgba(247,245,241,0)_100%)]" />
+          
         </motion.div>
 
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 pb-16 pt-28 md:px-8 md:pt-32">
@@ -123,7 +123,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl rounded-[2rem] border border-white/60 bg-white/70 p-5 shadow-[0_25px_70px_rgba(1,77,87,0.14)] backdrop-blur-md md:border-0 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-0"
+            className="max-w-3xl p-0"
           >
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -131,7 +131,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="text-sm font-bold uppercase tracking-[0.2em] text-[#7ab648] md:text-base"
             >
-              Motswedi Is A Fountain Of Hope
+              
             </motion.p>
 
             <motion.h1 className="mt-3 font-black leading-none">
@@ -153,13 +153,6 @@ export default function Home() {
     REHABILITATION CENTRE
   </motion.span>
 </motion.h1>
-
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: 90 }}
-              transition={{ delay: 0.9, duration: 0.8 }}
-              className="mt-6 h-1 rounded-full bg-cyan-400"
-            />
 
             <motion.p
               initial={{ opacity: 0 }}
@@ -245,7 +238,7 @@ export default function Home() {
             href="/about"
             className="mt-8 inline-flex rounded-xl bg-[#014d57] px-7 py-4 font-bold text-white shadow-lg transition hover:bg-[#01616d]"
           >
-            Learn More About Us →
+            Learn More About Us â†’
           </Link>
         </PremiumTile>
       </section>
@@ -292,7 +285,7 @@ export default function Home() {
                   </h3>
 
                   <p className="mt-4 font-bold text-[#7ab648]">
-                    Learn More →
+                    Learn More â†’
                   </p>
                 </div>
               </Link>
@@ -398,7 +391,7 @@ export default function Home() {
               </h2>
 
               <p className="mt-6 text-base leading-relaxed text-gray-600 md:text-lg">
-                Income generating projects strengthen the centre’s long-term
+                Income generating projects strengthen the centreâ€™s long-term
                 growth while creating practical learning and participation
                 opportunities.
               </p>
@@ -407,7 +400,7 @@ export default function Home() {
                 href="/projects"
                 className="mt-8 inline-flex rounded-xl bg-[#6aa93b] px-7 py-4 font-bold text-white shadow-lg transition hover:bg-[#5f9f34]"
               >
-                View Projects →
+                View Projects â†’
               </Link>
             </div>
 
@@ -494,7 +487,7 @@ export default function Home() {
             <h4 className="font-bold text-white">Contact</h4>
 
             <div className="mt-4 space-y-2 text-sm text-white/70">
-              <p>Mon–Fri, 8:00 AM – 5:00 PM</p>
+              <p>Monâ€“Fri, 8:00 AM â€“ 5:00 PM</p>
               <p>motswedirehab@btcmail.com</p>
               <p>+267 5729340</p>
             </div>
@@ -503,7 +496,7 @@ export default function Home() {
 
         <div className="mx-auto mt-8 max-w-7xl border-t border-white/10 pt-5 text-center">
   <p className="text-xs text-white/50">
-    © {new Date().getFullYear()} Motswedi Rehabilitation Centre. All rights reserved.
+    Â© {new Date().getFullYear()} Motswedi Rehabilitation Centre. All rights reserved.
   </p>
 
   <p className="mt-3 text-[11px] font-black uppercase tracking-[0.28em] text-white/65">
@@ -514,3 +507,9 @@ export default function Home() {
     </main>
   );
 }
+
+
+
+
+
+

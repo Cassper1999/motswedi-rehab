@@ -139,7 +139,7 @@ export default function ContactPage() {
       {[
         {
           title: "Phone",
-          text: "+267 5729340",
+          text: "+267 5728526 / +267 72593642",
         },
         {
           title: "Email",
