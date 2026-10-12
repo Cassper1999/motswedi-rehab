@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Temporary development backups
+*.backup
+*.backup.*
+*.hero-backup
+*.hero-*-backup
+*.before-*
+*.gradient-backup
+*.no-blur-backup
