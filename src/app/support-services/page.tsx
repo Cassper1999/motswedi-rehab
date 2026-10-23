@@ -98,55 +98,57 @@ export default function SupportServicesPage() {
         </div>
       </section>
 
-      {/* SERVICE OVERVIEW */}
-      <section className="pb-10">
-        <div className="mx-auto max-w-7xl px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="rounded-[2rem] bg-white p-8 shadow-xl md:p-12"
-          >
-            <div className="mb-4 h-2 w-24 rounded-full bg-[#7ab648]" />
+     
+{/* SERVICE OVERVIEW */}
+<section className="pb-10">
+  <div className="mx-auto max-w-7xl px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="rounded-[2rem] bg-[#014d57] p-8 text-white shadow-xl md:p-12"
+    >
+      <div className="mb-4 h-2 w-24 rounded-full bg-[#7ab648]" />
 
-            <h2 className="text-3xl font-black text-[#014d57] md:text-4xl">
-              How We Support Our Community
-            </h2>
+      <h2 className="text-3xl font-black text-white md:text-4xl">
+        How We Support Our Community
+      </h2>
 
-            <p className="mt-6 text-base leading-relaxed text-gray-600 md:text-lg">
-              The Physiotherapy Department provides comprehensive
-              rehabilitation services aimed at improving mobility,
-              independence and quality of life for children and adults living
-              with disabilities. Services include physical assessments,
-              therapy programmes, assistive device support, caregiver training
-              and outpatient rehabilitation.
-            </p>
+      <p className="mt-6 text-base leading-relaxed text-white md:text-lg">
+        The Physiotherapy Department provides comprehensive
+        rehabilitation services aimed at improving mobility,
+        independence and quality of life for children and adults living
+        with disabilities. Services include physical assessments,
+        therapy programmes, assistive device support, caregiver training
+        and outpatient rehabilitation.
+      </p>
 
-            <p className="mt-6 text-base leading-relaxed text-gray-600 md:text-lg">
-              Through Community Based Rehabilitation, outreach clinics and
-              home visits are conducted across Mochudi and surrounding
-              villages. These services bring rehabilitation, monitoring and
-              family support directly into the community, ensuring that
-              individuals who cannot easily travel still receive assistance.
-            </p>
+      <p className="mt-6 text-base leading-relaxed text-white md:text-lg">
+        Through Community Based Rehabilitation, outreach clinics and
+        home visits are conducted across Mochudi and surrounding
+        villages. These services bring rehabilitation, monitoring and
+        family support directly into the community, ensuring that
+        individuals who cannot easily travel still receive assistance.
+      </p>
 
-            <p className="mt-6 text-base leading-relaxed text-gray-600 md:text-lg">
-              The centre also provides transport services and residential
-              facilities that enable learners and trainees from different
-              locations to access education, vocational training and
-              rehabilitation programmes in a safe and supportive environment.
-            </p>
+      <p className="mt-6 text-base leading-relaxed text-white md:text-lg">
+        The centre also provides transport services and residential
+        facilities that enable learners and trainees from different
+        locations to access education, vocational training and
+        rehabilitation programmes in a safe and supportive environment.
+      </p>
 
-            <p className="mt-6 text-base leading-relaxed text-gray-600 md:text-lg">
-              By working closely with families, caregivers, schools, clinics
-              and community stakeholders, Motswedi Rehabilitation Centre
-              promotes inclusion, independence, dignity and opportunities for
-              every individual to reach their full potential.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <p className="mt-6 text-base leading-relaxed text-white md:text-lg">
+        By working closely with families, caregivers, schools, clinics
+        and community stakeholders, Motswedi Rehabilitation Centre
+        promotes inclusion, independence, dignity and opportunities for
+        every individual to reach their full potential.
+      </p>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* CTA WITH IMAGE */}
       <section className="px-4 pb-12 md:px-8">

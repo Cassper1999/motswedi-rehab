@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
@@ -24,86 +24,68 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full px-4 pt-4 md:px-8">
+    <header className="absolute left-0 top-0 z-50 w-full px-4 pt-4 md:px-8">
       <motion.div
         initial={{ opacity: 0, y: -25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className={`
-          relative mx-auto flex max-w-[1400px] items-center justify-between
-          rounded-[1.7rem] border px-5 py-4 transition-all duration-500 md:px-7
-          ${
-            scrolled
-              ? "border-white/60 bg-white/85 shadow-[0_20px_70px_rgba(1,77,87,0.18)] backdrop-blur-xl"
-              : "border-white/40 bg-white/35 shadow-[0_15px_50px_rgba(1,77,87,0.08)] backdrop-blur-md"
-          }
-        `}
+        className="relative mx-auto flex max-w-[1400px] items-center justify-between px-2 py-3 md:px-4"
       >
-        {/* LOGO */}
-        <Link
-          href="/"
-          onClick={() => setOpen(false)}
-          className="flex shrink-0 items-center bg-transparent"
-        >
-          <Image
-            src="/logos/motswedilogo-transparent.png"
-            alt="Motswedi Rehabilitation Centre"
-            width={96}
-            height={96}
-            priority
-            className="h-10 w-10 bg-transparent object-contain md:h-16 md:w-16"
-          />
-        </Link>
+{/* LOGO */}
+<Link
+  href="/"
+  onClick={() => setOpen(false)}
+  className="relative flex shrink-0 items-center"
+  style={{
+    transform: "translate(30px, -20px)",
+  }}
+>
+  <Image
+    src="/logos/motswedilogo-transparent.png"
+    alt="Motswedi Rehabilitation Centre"
+    width={100}
+    height={150}
+    priority
+    className="h-30 w-30 object-contain md:h-30 md:w-30"
+  />
+</Link>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden items-center gap-3 xl:flex 2xl:gap-5">
-          {links.map((link) => {
-            const active = pathname === link.href;
 
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="group relative whitespace-nowrap text-sm font-semibold text-[#062f36] transition hover:text-[#6aa93b] 2xl:text-[15px]"
-              >
-                {link.name}
+        
+{/* DESKTOP NAV — MANUAL POSITIONING */}
+<nav
+  className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-3 xl:flex 2xl:gap-5"
+  style={{
+    marginLeft: "0px", // Negative = LEFT, Positive = RIGHT
+    marginTop: "-30px",  // Negative = UP, Positive = DOWN
+  }}
+>
+  {links.map((link) => {
+    const active = pathname === link.href;
 
-                <span
-                  className={`
-                    absolute -bottom-2 left-0 h-[3px] rounded-full
-                    bg-gradient-to-r from-[#7ab648] to-cyan-400
-                    transition-all duration-300
-                    ${active ? "w-full" : "w-0 group-hover:w-full"}
-                  `}
-                />
-              </Link>
-            );
-          })}
-        </nav>
+    return (
+      <Link
+        key={link.href}
+        href={link.href}
+        className="group relative whitespace-nowrap text-sm font-semibold text-[#062f36] transition hover:text-[#6aa93b] 2xl:text-[15px]"
+      >
+        {link.name}
 
-        {/* DESKTOP CTA */}
-        <div className="hidden shrink-0 items-center xl:flex">
-          <Link
-            href="/contact"
-            className="rounded-2xl bg-[#6aa93b] px-5 py-3 text-sm font-bold text-white shadow-[0_16px_40px_rgba(106,169,59,0.35)] transition hover:-translate-y-0.5 hover:bg-[#5f9f34] 2xl:px-6 2xl:text-[15px]"
-          >
-            Need Assistance?
-          </Link>
-        </div>
+        <span
+          className={`
+            absolute -bottom-2 left-0 h-[3px] rounded-full
+            bg-gradient-to-r from-[#7ab648] to-cyan-400
+            transition-all duration-300
+            ${active ? "w-full" : "w-0 group-hover:w-full"}
+          `}
+        />
+      </Link>
+    );
+  })}
+</nav>
+
 
         {/* MOBILE HAMBURGER */}
         <button
@@ -111,7 +93,7 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           aria-expanded={open}
-          className="relative z-[60] flex h-12 w-12 items-center justify-center rounded-2xl border border-white/70 bg-white/80 shadow-[0_15px_40px_rgba(1,77,87,0.18)] backdrop-blur-md xl:hidden"
+          className="relative z-[60] flex h-12 w-12 items-center justify-center rounded-2xl border border-white/70 bg-white/85 shadow-[0_15px_40px_rgba(1,77,87,0.18)] backdrop-blur-md xl:hidden"
         >
           <div className="relative h-5 w-6">
             <span
@@ -148,7 +130,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -12, scale: 0.96 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="absolute right-0 top-[82px] z-50 w-[min(88vw,370px)] xl:hidden"
+              className="absolute right-0 top-full z-50 mt-3 w-[min(88vw,370px)] xl:hidden"
             >
               <div className="absolute -top-2 right-6 h-4 w-4 rotate-45 border-l border-t border-white/70 bg-white/95" />
 
@@ -191,7 +173,7 @@ export default function Navbar() {
                               }
                             `}
                           >
-                            →
+                            â†’
                           </span>
                         </Link>
                       );
@@ -199,15 +181,7 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                <div className="border-t border-gray-100 p-3">
-                  <Link
-                    href="/contact"
-                    onClick={() => setOpen(false)}
-                    className="block rounded-2xl bg-[#6aa93b] px-5 py-3 text-center text-sm font-black text-white shadow-[0_16px_40px_rgba(106,169,59,0.28)] transition hover:bg-[#5f9f34]"
-                  >
-                    Need Assistance?
-                  </Link>
-                </div>
+                
               </div>
             </motion.div>
           )}
@@ -216,3 +190,4 @@ export default function Navbar() {
     </header>
   );
 }
+

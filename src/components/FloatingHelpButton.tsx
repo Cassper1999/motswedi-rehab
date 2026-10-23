@@ -8,14 +8,14 @@ const helpActions = [
   {
     label: "WhatsApp Us",
     description: "Quick chat support",
-    href: "https://wa.me/2675729340",
+    href: "https://wa.me/26772593642",
     icon: "💬",
     external: true,
   },
   {
     label: "Call Centre",
-    description: "+267 5729340",
-    href: "tel:+2675729340",
+    description: "+267 5728526",
+    href: "tel:+2675728526",
     icon: "📞",
     external: true,
   },

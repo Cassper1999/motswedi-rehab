@@ -1,14 +1,91 @@
+﻿
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
+/* BACKGROUND SLIDESHOW IMAGES */
+const projectBackgrounds = [
+  "/images/projects/COMMUNITYHELP.webp",
+  "/images/projects/IMG_3614.JPG",
+  "/images/projects/IMG_3619.JPG",
+  "/images/projects/IMG_3680.JPG",
+  "/images/projects/IMG_3689.JPG",
+  "/images/projects/IMG_3692.JPG",
+  "/images/projects/IMG_3695.JPG",
+  "/images/projects/IMG_3699.JPG",
+];
+
+/* ANIMATED BACKGROUND */
+function ProjectsBackground() {
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveImage((previous) =>
+        (previous + 1) % projectBackgrounds.length
+      );
+    }, 6000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  return (
+    <div
+      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      aria-hidden="true"
+    >
+      {projectBackgrounds.map((src, index) => (
+        <motion.div
+          key={src}
+          initial={false}
+          animate={{
+            opacity: activeImage === index ? 1 : 0,
+            scale: activeImage === index ? 1.04 : 1,
+          }}
+          transition={{
+            opacity: {
+              duration: 1.5,
+              ease: "easeInOut",
+            },
+            scale: {
+              duration: 6,
+              ease: "linear",
+            },
+          }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={src}
+            alt=""
+            fill
+            priority={index === 0}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </motion.div>
+      ))}
+
+      {/* SOFT OVERLAY FOR TEXT READABILITY */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f3efe6]/85 via-white/70 to-[#dff4ff]/75" />
+
+      {/* SUBTLE COLOUR DEPTH */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_90%_15%,rgba(122,182,72,0.09),transparent_55%)]" />
+    </div>
+  );
+}
+
+/* PREMIUM PROJECT TILE */
 type TileProps = {
   children: ReactNode;
   className?: string;
 };
 
-function PremiumTile({ children, className = "" }: TileProps) {
+function PremiumTile({
+  children,
+  className = "",
+}: TileProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 35 }}
@@ -20,10 +97,10 @@ function PremiumTile({ children, className = "" }: TileProps) {
         group relative mt-10 overflow-hidden
         rounded-[2rem]
         border border-white/60
-        bg-white/80
-        backdrop-blur-md
+        bg-white/85
         p-6 md:p-10
         shadow-[0_25px_70px_rgba(1,77,87,0.12)]
+        backdrop-blur-md
         transition-all duration-500
         hover:shadow-[0_35px_90px_rgba(1,77,87,0.18)]
         ${className}
@@ -33,12 +110,18 @@ function PremiumTile({ children, className = "" }: TileProps) {
 
       <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-cyan-100/40 blur-3xl" />
 
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10">
+        {children}
+      </div>
     </motion.div>
   );
 }
 
-function DarkTile({ children, className = "" }: TileProps) {
+/* DARK SECTION TILE */
+function DarkTile({
+  children,
+  className = "",
+}: TileProps) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 35 }}
@@ -62,12 +145,19 @@ function DarkTile({ children, className = "" }: TileProps) {
 
       <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-cyan-200/20 blur-3xl" />
 
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10">
+        {children}
+      </div>
     </motion.section>
   );
 }
 
-function SmallTile({ children }: { children: ReactNode }) {
+/* SMALL VISION TILE */
+function SmallTile({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <motion.div
       whileHover={{ y: -8, scale: 1.02 }}
@@ -89,10 +179,16 @@ function SmallTile({ children }: { children: ReactNode }) {
   );
 }
 
+/* PROJECTS PAGE */
 export default function ProjectsPage() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-gradient-to-br from-[#f3efe6] via-[#e8f7ef] to-[#dff4ff] pt-28 pb-16 md:pt-36">
-      <section className="mx-auto max-w-7xl px-4 md:px-8">
+    <main className="relative isolate min-h-screen overflow-x-hidden bg-[#f3efe6] pb-16 pt-28 md:pt-36">
+
+      {/* FULL PAGE IMAGE SLIDESHOW */}
+      <ProjectsBackground />
+
+      {/* ALL PAGE CONTENT ABOVE BACKGROUND */}
+      <section className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
 
         {/* HERO */}
         <motion.div
@@ -106,6 +202,7 @@ export default function ProjectsPage() {
           </p>
 
           <motion.h1 className="mt-4 text-4xl font-black leading-[1.05] md:text-6xl">
+
             <motion.span
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
@@ -118,7 +215,10 @@ export default function ProjectsPage() {
             <motion.span
               initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.25, duration: 0.8 }}
+              transition={{
+                delay: 0.25,
+                duration: 0.8,
+              }}
               className="block text-[#7ab648]"
             >
               GENERATING
@@ -127,16 +227,20 @@ export default function ProjectsPage() {
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              transition={{
+                delay: 0.5,
+                duration: 0.8,
+              }}
               className="block text-[#014d57]"
             >
               PROJECTS
             </motion.span>
+
           </motion.h1>
 
           <div className="mt-6 h-1 w-24 rounded-full bg-cyan-400" />
 
-          <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-[#243f45] md:mt-6 md:text-lg">
             Motswedi Rehabilitation Centre continues to develop sustainable
             initiatives that strengthen the long-term growth of the organisation
             while creating practical learning opportunities, skills development
@@ -161,75 +265,192 @@ export default function ProjectsPage() {
         {/* PROJECTS */}
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
 
-          <PremiumTile className="mt-0">
-            <h2 className="text-3xl font-bold text-[#014d57]">
-              Sewing Project
-            </h2>
+          {/* SEWING AND EMBROIDERY PROJECT */}
+          <PremiumTile className="mt-0 !p-0">
+            <div className="relative flex h-full min-h-[680px] flex-col overflow-hidden">
 
-            <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
-              The Sewing Project provides affordable sewing and garment-related
-              services to individuals, schools, businesses and community
-              members while supporting operational sustainability.
-            </p>
+              {/* TEXT CONTENT */}
+              <div className="relative z-20 px-7 pb-4 pt-9 md:px-10 md:pt-10">
 
-            <div className="mt-8 space-y-3 text-base font-medium text-gray-700 md:text-lg">
-              <p>• Clothing repairs and alterations</p>
-              <p>• School uniform production</p>
-              <p>• Embroidery services</p>
-              <p>• Custom sewing services</p>
+                <h2 className="text-3xl font-bold text-[#014d57]">
+                  Sewing and Embroidery Project
+                </h2>
+
+                <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
+                  The Sewing Project provides affordable sewing and garment-related
+                  services to individuals, schools, businesses and community
+                  members while supporting operational sustainability.
+                </p>
+
+                <div className="mt-7 space-y-3 text-base font-medium text-gray-700 md:text-lg">
+                  <p>• Clothing repairs and alterations</p>
+                  <p>• School uniform production</p>
+                  <p>• Embroidery services</p>
+                  <p>• Custom sewing services</p>
+                </div>
+              </div>
+
+              {/* FULL-WIDTH FADING IMAGE */}
+              <div className="relative mt-auto h-[300px] w-full shrink-0 md:h-[370px]">
+                <Image
+                  src="/images/projects/sewing and emboridery project/IMG_3709.JPG"
+                  alt="Embroidery machines at Motswedi Rehabilitation Centre"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
+                />
+
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white via-white/35 to-transparent" />
+
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#014d57]/15 via-transparent to-transparent" />
+              </div>
+
             </div>
           </PremiumTile>
 
+          {/* FISH REARING PROJECT */}
           <PremiumTile className="mt-0">
+
             <h2 className="text-3xl font-bold text-[#014d57]">
               Fish Rearing Project
             </h2>
 
             <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
-              As part of its commitment to sustainability and income generation, Motswedi Rehabilitation Centre operates a fish-rearing project that contributes towards supporting the centre’s programmes and services. The project involves purchasing young fish and raising them under suitable conditions until they reach market size and weight for sale.
+              As part of its commitment to sustainability and income generation,
+              Motswedi Rehabilitation Centre operates a fish-rearing project
+              that contributes towards supporting the centre&apos;s programmes and
+              services. The project involves purchasing young fish and raising
+              them under suitable conditions until they reach market size and
+              weight for sale.
             </p>
 
-            <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
-              The project provides an opportunity for the centre to generate additional income that can be used to strengthen rehabilitation services, vocational training programmes, and the daily operations of the centre. It also serves as a practical learning platform where trainees can develop skills related to animal care, environmental management, responsibility, and basic business practices.
+            <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
+              The project provides an opportunity for the centre to generate
+              additional income that can be used to strengthen rehabilitation
+              services, vocational training programmes, and the daily operations
+              of the centre. It also serves as a practical learning platform
+              where trainees can develop skills related to animal care,
+              environmental management, responsibility, and basic business
+              practices.
             </p>
+
           </PremiumTile>
-
         </div>
 
-       {/* VISION */}
-<div className="mt-12">
-  <motion.h2 className="text-left text-4xl font-black leading-[1.05] md:text-5xl lg:text-center">
-    <motion.span
-      initial={{ opacity: 0, x: -60 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="block text-[#014d57]"
-    >
-      WHY THESE
-    </motion.span>
+        {/* ORCHARD PROJECT */}
+        <motion.article
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.7 }}
+          className="relative mt-8 overflow-hidden rounded-[2rem] border border-white/70 bg-white/90 shadow-[0_25px_70px_rgba(1,77,87,0.12)] backdrop-blur-md md:mt-12"
+        >
 
-    <motion.span
-      initial={{ opacity: 0, x: 60 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.25, duration: 0.8 }}
-      className="block text-[#7ab648]"
-    >
-      PROJECTS
-    </motion.span>
+          {/* TOP ACCENT */}
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#7ab648] via-cyan-400 to-[#014d57]" />
 
-    <motion.span
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.5, duration: 0.8 }}
-      className="block text-[#014d57]"
-    >
-      MATTER
-    </motion.span>
-  </motion.h2>
+          <div className="relative p-7 md:p-12 lg:p-14">
+
+            {/* BACKGROUND ACCENT */}
+            <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#7ab648]/10 blur-3xl" />
+
+            <div className="relative z-10">
+
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#7ab648] md:text-sm">
+                Environmental Sustainability
+              </p>
+
+              <h2 className="mt-4 max-w-4xl text-3xl font-black leading-tight text-[#014d57] md:text-4xl">
+                MOTSWEDI ORCHARD
+
+                <span className="mt-2 block text-[#7ab648]">
+                  Growing Towards a Sustainable Future
+                </span>
+              </h2>
+
+              <div className="mt-6 h-1 w-20 rounded-full bg-cyan-400" />
+
+              {/* ORCHARD STORY — NO SIDEBAR */}
+              <div className="mt-8">
+                <div className="space-y-5 text-base leading-relaxed text-gray-600 md:text-lg">
+
+                  <p>
+                    Motswedi Rehabilitation Centre has established an orchard
+                    that is currently at its initial stage of development.
+                    The orchard consists of orange, mango and pear trees,
+                    which are still growing and becoming established.
+                  </p>
+
+                  <p>
+                    At this stage, the focus is on nurturing the trees and
+                    ensuring they receive the care needed for healthy growth.
+                    As the orchard develops, it is expected to contribute
+                    to environmental sustainability and provide opportunities
+                    for learning about fruit tree cultivation and responsible
+                    environmental care.
+                  </p>
+
+                  <p>
+                    Motswedi looks forward to seeing the orchard flourish
+                    and, in time, produce fresh fruit.
+                  </p>
+
+                  <p className="font-semibold text-[#014d57]">
+                    Growing today for a fruitful tomorrow
+                  </p>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </motion.article>
+
+        {/* VISION */}
+        <div className="mt-12">
+
+          <motion.h2 className="text-left text-4xl font-black leading-[1.05] md:text-5xl lg:text-center">
+
+            <motion.span
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="block text-[#014d57]"
+            >
+              WHY THESE
+            </motion.span>
+
+            <motion.span
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: 0.25,
+                duration: 0.8,
+              }}
+              className="block text-[#7ab648]"
+            >
+              PROJECTS
+            </motion.span>
+
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: 0.5,
+                duration: 0.8,
+              }}
+              className="block text-[#014d57]"
+            >
+              MATTER
+            </motion.span>
+
+          </motion.h2>
+
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
             {[
               "Strengthen Financial Sustainability",
               "Support Programme Development",
@@ -244,12 +465,15 @@ export default function ProjectsPage() {
                 </p>
               </SmallTile>
             ))}
+
           </div>
         </div>
 
         {/* CTA */}
         <DarkTile className="mb-24 bg-gradient-to-br from-[#014d57] via-[#01616d] to-[#028090]">
+
           <motion.h2 className="text-4xl font-black leading-[1.05] md:text-5xl">
+
             <motion.span
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -264,7 +488,10 @@ export default function ProjectsPage() {
               initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.25, duration: 0.8 }}
+              transition={{
+                delay: 0.25,
+                duration: 0.8,
+              }}
               className="block text-[#7ab648]"
             >
               SHARED
@@ -274,11 +501,15 @@ export default function ProjectsPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              transition={{
+                delay: 0.5,
+                duration: 0.8,
+              }}
               className="block text-white"
             >
               VISION
             </motion.span>
+
           </motion.h2>
 
           <p className="mt-4 text-base leading-relaxed text-white/80 md:mt-6 md:text-lg">
@@ -291,9 +522,13 @@ export default function ProjectsPage() {
           <p className="mt-6 text-lg font-semibold text-white md:text-xl">
             Creating opportunities today. Building sustainability for tomorrow.
           </p>
+
         </DarkTile>
 
       </section>
     </main>
   );
 }
+
+
+

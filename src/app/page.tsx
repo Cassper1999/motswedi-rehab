@@ -76,15 +76,16 @@ function SmallTile({ children }: { children: ReactNode }) {
   );
 }
 
+
 const programmes = [
   {
     title: "Early Childhood Stimulation",
-    image: "/images/programmes/motswedikids.webp",
+    image: "/images/programmes/EARLLY.JPG",
     href: "/programmes/stimulation",
   },
   {
     title: "Skills & Dressmaking",
-    image: "/images/programmes/skills.JPG",
+    image: "/images/programmes/SKIIILL.JPG",
     href: "/programmes/dressmaking",
   },
   {
@@ -94,29 +95,33 @@ const programmes = [
   },
 ];
 
+
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-gradient-to-br from-[#f3efe6] via-[#e8f7ef] to-[#dff4ff]">
+    
+<main className="relative isolate min-h-screen overflow-x-clip bg-[#f3efe6]">
 
-      {/* HERO */}
-      <section className="relative min-h-screen overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.08 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2 }}
-          className="absolute inset-0 w-full"
-        >
-          <Image
-            src="/images/home/motswedihome.webp"
-            alt="Motswedi Rehabilitation Centre"
-            fill
-            priority
-            className="object-cover object-[center_20%] md:object-center"
-          />
+  {/* FIXED BACKGROUND IMAGE */}
+  <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+    <Image
+      src="/images/home/motswedihome.webp"
+      alt="Motswedi Rehabilitation Centre"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover object-[center_20%] md:object-center"
+    />
 
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,245,241,0.92)_0%,rgba(247,245,241,0.78)_28%,rgba(247,245,241,0.48)_55%,rgba(247,245,241,0.19)_75%,rgba(247,245,241,0)_100%)]" />
-          
-        </motion.div>
+    {/* SOFT GRADIENT FOR TEXT READABILITY */}
+    <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,245,241,0.92)_0%,rgba(247,245,241,0.78)_28%,rgba(247,245,241,0.48)_55%,rgba(247,245,241,0.19)_75%,rgba(247,245,241,0)_100%)]" />
+  </div>
+
+  {/* PAGE CONTENT ABOVE FIXED IMAGE */}
+  <div className="relative z-10">
+
+    {/* HERO */}
+    <section className="relative min-h-screen overflow-hidden">
+
 
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 pb-16 pt-28 md:px-8 md:pt-32">
           <motion.div
@@ -238,7 +243,7 @@ export default function Home() {
             href="/about"
             className="mt-8 inline-flex rounded-xl bg-[#014d57] px-7 py-4 font-bold text-white shadow-lg transition hover:bg-[#01616d]"
           >
-            Learn More About Us â†’
+            Learn More About Us →
           </Link>
         </PremiumTile>
       </section>
@@ -285,7 +290,7 @@ export default function Home() {
                   </h3>
 
                   <p className="mt-4 font-bold text-[#7ab648]">
-                    Learn More â†’
+                    Learn More →
                   </p>
                 </div>
               </Link>
@@ -391,7 +396,7 @@ export default function Home() {
               </h2>
 
               <p className="mt-6 text-base leading-relaxed text-gray-600 md:text-lg">
-                Income generating projects strengthen the centreâ€™s long-term
+                Income generating projects strengthen the centre's long-term
                 growth while creating practical learning and participation
                 opportunities.
               </p>
@@ -400,7 +405,7 @@ export default function Home() {
                 href="/projects"
                 className="mt-8 inline-flex rounded-xl bg-[#6aa93b] px-7 py-4 font-bold text-white shadow-lg transition hover:bg-[#5f9f34]"
               >
-                View Projects â†’
+                View Projects →
               </Link>
             </div>
 
@@ -487,9 +492,9 @@ export default function Home() {
             <h4 className="font-bold text-white">Contact</h4>
 
             <div className="mt-4 space-y-2 text-sm text-white/70">
-              <p>Monâ€“Fri, 8:00 AM â€“ 5:00 PM</p>
+              <p>Mon-Fri, 7:30 AM to 4:30 PM</p>
               <p>motswedirehab@btcmail.com</p>
-              <p>+267 5729340</p>
+              <p>+267 5728526</p>
             </div>
           </div>
         </div>
@@ -503,8 +508,11 @@ export default function Home() {
     DONATED BY LESEDI TRUST
   </p>
 </div>
+  
       </footer>
-    </main>
+
+  </div>
+</main>
   );
 }
 
