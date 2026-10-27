@@ -1,4 +1,5 @@
-﻿"use client";
+﻿
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -31,69 +32,64 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="relative mx-auto flex max-w-[1400px] items-center justify-between px-2 py-3 md:px-4"
+        className="relative mx-auto flex max-w-[1400px] items-center justify-between px-0 py-2 md:px-4 md:py-3"
       >
-{/* LOGO */}
-<Link
-  href="/"
-  onClick={() => setOpen(false)}
-  className="relative flex shrink-0 items-center"
-  style={{
-    transform: "translate(30px, -20px)",
-  }}
->
-  <Image
-    src="/logos/motswedilogo-transparent.png"
-    alt="Motswedi Rehabilitation Centre"
-    width={100}
-    height={150}
-    priority
-    className="h-30 w-30 object-contain md:h-30 md:w-30"
-  />
-</Link>
+        {/* LOGO — LARGER ON MOBILE */}
+        <Link
+          href="/"
+          onClick={() => setOpen(false)}
+          className="relative flex h-12 w-12 shrink-0 items-center justify-center xl:h-auto xl:w-auto xl:translate-x-[30px] xl:-translate-y-[20px]"
+        >
+          <Image
+            src="/logos/motswedilogo-transparent.png"
+            alt="Motswedi Rehabilitation Centre"
+            width={120}
+            height={120}
+            priority
+            className="h-[72px] w-[72px] max-w-none shrink-0 object-contain xl:h-[120px] xl:w-[120px]"
+          />
+        </Link>
 
+        {/* DESKTOP NAV — ORIGINAL POSITIONING */}
+        <nav
+          className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-3 xl:flex 2xl:gap-5"
+          style={{
+            marginLeft: "0px",
+            marginTop: "-30px",
+          }}
+        >
+          {links.map((link) => {
+            const active = pathname === link.href;
 
-        
-{/* DESKTOP NAV — MANUAL POSITIONING */}
-<nav
-  className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-3 xl:flex 2xl:gap-5"
-  style={{
-    marginLeft: "0px", // Negative = LEFT, Positive = RIGHT
-    marginTop: "-30px",  // Negative = UP, Positive = DOWN
-  }}
->
-  {links.map((link) => {
-    const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="group relative whitespace-nowrap text-sm font-semibold text-[#062f36] transition hover:text-[#6aa93b] 2xl:text-[15px]"
+              >
+                {link.name}
 
-    return (
-      <Link
-        key={link.href}
-        href={link.href}
-        className="group relative whitespace-nowrap text-sm font-semibold text-[#062f36] transition hover:text-[#6aa93b] 2xl:text-[15px]"
-      >
-        {link.name}
+                <span
+                  className={`
+                    absolute -bottom-2 left-0 h-[3px] rounded-full
+                    bg-gradient-to-r from-[#7ab648] to-cyan-400
+                    transition-all duration-300
+                    ${active ? "w-full" : "w-0 group-hover:w-full"}
+                  `}
+                />
+              </Link>
+            );
+          })}
+        </nav>
 
-        <span
-          className={`
-            absolute -bottom-2 left-0 h-[3px] rounded-full
-            bg-gradient-to-r from-[#7ab648] to-cyan-400
-            transition-all duration-300
-            ${active ? "w-full" : "w-0 group-hover:w-full"}
-          `}
-        />
-      </Link>
-    );
-  })}
-</nav>
-
-
-        {/* MOBILE HAMBURGER */}
+        {/* MOBILE HAMBURGER — 48PX × 48PX */}
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="relative z-[60] flex h-12 w-12 items-center justify-center rounded-2xl border border-white/70 bg-white/85 shadow-[0_15px_40px_rgba(1,77,87,0.18)] backdrop-blur-md xl:hidden"
+          aria-controls="motswedi-mobile-menu"
+          className="relative z-[60] flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/70 bg-white/85 shadow-[0_15px_40px_rgba(1,77,87,0.18)] backdrop-blur-md xl:hidden"
         >
           <div className="relative h-5 w-6">
             <span
@@ -126,6 +122,7 @@ export default function Navbar() {
         <AnimatePresence>
           {open && (
             <motion.div
+              id="motswedi-mobile-menu"
               initial={{ opacity: 0, y: -12, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -12, scale: 0.96 }}
@@ -164,6 +161,7 @@ export default function Navbar() {
                           <span>{link.name}</span>
 
                           <span
+                            aria-hidden="true"
                             className={`
                               ml-3 shrink-0 transition-all duration-300
                               ${
@@ -173,15 +171,13 @@ export default function Navbar() {
                               }
                             `}
                           >
-                            â†’
+                            →
                           </span>
                         </Link>
                       );
                     })}
                   </div>
                 </div>
-
-                
               </div>
             </motion.div>
           )}
@@ -190,4 +186,5 @@ export default function Navbar() {
     </header>
   );
 }
+
 

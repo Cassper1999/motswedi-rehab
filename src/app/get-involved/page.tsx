@@ -97,7 +97,7 @@ export default function GetInvolvedPage() {
             className="relative overflow-hidden rounded-[2rem]"
           >
             <Image
-              src="/images/get-involved/HANDSHELP.webp"
+              src="/images/get-involved/involved.jpeg"
               alt="Get Involved"
               width={1600}
               height={900}
