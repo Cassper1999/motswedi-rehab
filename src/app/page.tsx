@@ -178,12 +178,12 @@ export default function Home() {
  
 
 {/* HERO - CENTRED ON DESKTOP AND MOBILE */}
-<section className="relative min-h-[100svh] overflow-hidden md:min-h-screen">
+<section className="relative min-h-0 md:min-h-screen">
   <div
     className="
-      relative z-10 mx-auto flex min-h-[100svh]
+      relative z-10 mx-auto flex min-h-0
       max-w-7xl items-stretch
-      px-5 pb-12 pt-28
+      px-4 pb-16 pt-24 min-[390px]:px-5 min-[390px]:pt-28
       md:min-h-screen md:items-center
       md:px-8 md:pb-16 md:pt-32
     "
@@ -211,7 +211,7 @@ export default function Home() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="
             block
-            text-[clamp(3.2rem,13.5vw,4.3rem)]
+            text-[clamp(3.65rem,13.5vw,5.3rem)]
             font-black
             tracking-[-0.065em]
             sm:text-6xl
@@ -250,7 +250,7 @@ export default function Home() {
             mx-auto mt-1 block
             max-w-[340px]
             text-center
-            text-[clamp(1.35rem,5.6vw,2rem)]
+            text-[clamp(1.05rem,5.2vw,2rem)]
             font-extrabold
             leading-[1.1]
             tracking-[-0.035em]
@@ -295,9 +295,9 @@ export default function Home() {
   animate={{ opacity: 1 }}
   transition={{ delay: 1.1, duration: 0.8 }}
   className="
-    mx-auto mt-10 max-w-[580px]
+    mx-auto mt-7 max-w-[580px] min-[390px]:mt-10
     text-center
-    text-[15px]
+    text-[clamp(13px,3.6vw,15px)]
     font-semibold
     leading-[1.9]
     tracking-[-0.01em]
@@ -323,7 +323,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.3, duration: 0.8 }}
         className="
-          mt-auto flex flex-col gap-3 pt-17
+          mt-10 flex flex-col gap-3 pt-0
           sm:flex-row sm:gap-4
           md:mt-8 md:justify-center md:pt-0
         "
