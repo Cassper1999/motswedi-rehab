@@ -337,74 +337,79 @@ export default function ProjectsPage() {
           </PremiumTile>
         </div>
 
-        {/* ORCHARD PROJECT */}
-        <motion.article
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.7 }}
-          className="relative mt-8 overflow-hidden rounded-[2rem] border border-white/70 bg-white/90 shadow-[0_25px_70px_rgba(1,77,87,0.12)] backdrop-blur-md md:mt-12"
-        >
+        
+{/* ORCHARD PROJECT - PREMIUM TEAL BACKGROUND */}
+<motion.article
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.15 }}
+  transition={{ duration: 0.7 }}
+  className="relative mt-8 overflow-hidden rounded-[2rem] border border-white/20 bg-[#014d57] shadow-[0_25px_70px_rgba(1,77,87,0.24)] md:mt-12"
+>
+  {/* TOP ACCENT */}
+  <div className="h-1.5 w-full bg-gradient-to-r from-[#7ab648] via-cyan-400 to-[#014d57]" />
 
-          {/* TOP ACCENT */}
-          <div className="h-1.5 w-full bg-gradient-to-r from-[#7ab648] via-cyan-400 to-[#014d57]" />
+  <div className="relative p-7 md:p-12 lg:p-14">
 
-          <div className="relative p-7 md:p-12 lg:p-14">
+    {/* BACKGROUND ACCENT */}
+    <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#7ab648]/10 blur-3xl" />
 
-            {/* BACKGROUND ACCENT */}
-            <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#7ab648]/10 blur-3xl" />
+    <div className="relative z-10">
 
-            <div className="relative z-10">
+      {/* SECTION LABEL - GREEN UNCHANGED */}
+      <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#7ab648] md:text-sm">
+        Environmental Sustainability
+      </p>
 
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#7ab648] md:text-sm">
-                Environmental Sustainability
-              </p>
+      {/* MAIN HEADING - WHITE */}
+      <h2 className="mt-4 max-w-4xl text-3xl font-black leading-tight text-white md:text-4xl">
+        MOTSWEDI ORCHARD
 
-              <h2 className="mt-4 max-w-4xl text-3xl font-black leading-tight text-[#014d57] md:text-4xl">
-                MOTSWEDI ORCHARD
+        {/* SUBTITLE - GREEN UNCHANGED */}
+        <span className="mt-2 block text-[#7ab648]">
+          Growing Towards a Sustainable Future
+        </span>
+      </h2>
 
-                <span className="mt-2 block text-[#7ab648]">
-                  Growing Towards a Sustainable Future
-                </span>
-              </h2>
+      {/* CYAN ACCENT LINE */}
+      <div className="mt-6 h-1 w-20 rounded-full bg-cyan-400" />
 
-              <div className="mt-6 h-1 w-20 rounded-full bg-cyan-400" />
+      {/* ORCHARD STORY */}
+      <div className="mt-8">
+        <div className="space-y-5 text-base leading-relaxed text-white/90 md:text-lg">
 
-              {/* ORCHARD STORY — NO SIDEBAR */}
-              <div className="mt-8">
-                <div className="space-y-5 text-base leading-relaxed text-gray-600 md:text-lg">
+          <p>
+            Motswedi Rehabilitation Centre has established an orchard
+            that is currently at its initial stage of development.
+            The orchard consists of orange, mango and pear trees,
+            which are still growing and becoming established.
+          </p>
 
-                  <p>
-                    Motswedi Rehabilitation Centre has established an orchard
-                    that is currently at its initial stage of development.
-                    The orchard consists of orange, mango and pear trees,
-                    which are still growing and becoming established.
-                  </p>
+          <p>
+            At this stage, the focus is on nurturing the trees and
+            ensuring they receive the care needed for healthy growth.
+            As the orchard develops, it is expected to contribute
+            to environmental sustainability and provide opportunities
+            for learning about fruit tree cultivation and responsible
+            environmental care.
+          </p>
 
-                  <p>
-                    At this stage, the focus is on nurturing the trees and
-                    ensuring they receive the care needed for healthy growth.
-                    As the orchard develops, it is expected to contribute
-                    to environmental sustainability and provide opportunities
-                    for learning about fruit tree cultivation and responsible
-                    environmental care.
-                  </p>
+          <p>
+            Motswedi looks forward to seeing the orchard flourish
+            and, in time, produce fresh fruit.
+          </p>
 
-                  <p>
-                    Motswedi looks forward to seeing the orchard flourish
-                    and, in time, produce fresh fruit.
-                  </p>
+          {/* CLOSING STATEMENT - WHITE */}
+          <p className="font-semibold text-white">
+            Growing today for a fruitful tomorrow
+          </p>
 
-                  <p className="font-semibold text-[#014d57]">
-                    Growing today for a fruitful tomorrow
-                  </p>
+        </div>
+      </div>
 
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </motion.article>
+    </div>
+  </div>
+</motion.article>
 
         {/* VISION */}
         <div className="mt-12">
