@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { type ReactNode } from "react";
+import { Outfit } from "next/font/google";
 
 type TileProps = {
   children: ReactNode;
@@ -94,7 +95,11 @@ const programmes = [
     href: "/programmes/cookery",
   },
 ];
-
+const premiumHeadingFont = Outfit({
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
+  display: "swap",
+});
 export default function Home() {
   return (
     <main className="relative isolate min-h-screen overflow-x-clip bg-[#f3efe6]">
@@ -170,128 +175,210 @@ export default function Home() {
 {/* PAGE CONTENT ABOVE BACKGROUND */}
 <div className="relative z-10">
 
-  {/* HERO - DESKTOP RESTORED, MOBILE UNCHANGED */}
-  <section className="relative min-h-[640px] overflow-hidden md:min-h-screen">
-    <div className="relative z-10 mx-auto flex min-h-[640px] max-w-7xl items-start px-5 pb-12 pt-28 md:min-h-screen md:items-center md:px-8 md:pb-16 md:pt-32">
+ 
 
-      <motion.div
-        initial={{ opacity: 0, y: 35 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="w-full max-w-3xl p-0"
+{/* HERO - CENTRED ON DESKTOP AND MOBILE */}
+<section className="relative min-h-[100svh] overflow-hidden md:min-h-screen">
+  <div
+    className="
+      relative z-10 mx-auto flex min-h-[100svh]
+      max-w-7xl items-stretch
+      px-5 pb-12 pt-28
+      md:min-h-screen md:items-center
+      md:px-8 md:pb-16 md:pt-32
+    "
+  >
+    <motion.div
+      initial={{ opacity: 0, y: 35 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="
+        flex w-full max-w-3xl flex-1 flex-col
+        md:mx-auto md:block md:flex-none
+      "
+    >
+      {/* PREMIUM HERO TYPOGRAPHY */}
+      <motion.h1
+        className="
+          text-center font-black leading-[1.05]
+          md:mt-3 md:text-center md:leading-none
+        "
       >
-
-        {/* PREMIUM BRAND HEADING */}
-        <motion.h1 className="text-center font-black leading-[1.05] md:mt-3 md:text-left md:leading-none">
-
-          {/* MOTSWEDI */}
-          <motion.span
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="
-              block
-              text-[clamp(2.75rem,11.5vw,3.7rem)]
-              font-black
-              tracking-[-0.045em]
-              bg-gradient-to-b
-              from-[#014d57]
-              via-[#016b73]
-              to-[#00343b]
-              bg-clip-text
-              text-transparent
-              drop-shadow-[1px_2px_2px_rgba(0,42,48,0.22)]
-              sm:text-6xl
-              md:text-[90px]
-            "
-          >
-            MOTSWEDI
-          </motion.span>
-
-          {/* REHABILITATION CENTRE */}
-          <motion.span
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="
-              mx-auto
-              mt-1
-              block
-              max-w-[340px]
-              text-center
-              text-[clamp(1.25rem,5.3vw,1.85rem)]
-              font-extrabold
-              leading-[1.1]
-              tracking-[-0.025em]
-              bg-gradient-to-b
-              from-[#85c64f]
-              via-[#6aa93b]
-              to-[#417827]
-              bg-clip-text
-              text-transparent
-              drop-shadow-[1px_2px_2px_rgba(45,85,30,0.20)]
-              sm:text-[2.75rem]
-              md:mx-0
-              md:mt-0
-              md:max-w-none
-              md:text-left
-              md:text-[4rem]
-              lg:text-[4.75rem]
-            "
-          >
-            REHABILITATION CENTRE
-          </motion.span>
-
-        </motion.h1>
-
-        {/* DESCRIPTION */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.1, duration: 0.8 }}
-          className="mt-5 max-w-[580px] text-[15px] font-medium leading-7 text-gray-800 md:mt-6 md:max-w-none md:text-xl md:leading-relaxed"
+        {/* MOTSWEDI */}
+        <motion.span
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="
+            block
+            text-[clamp(3.2rem,13.5vw,4.3rem)]
+            font-black
+            tracking-[-0.065em]
+            sm:text-6xl
+            md:text-[90px]
+            md:tracking-[-0.045em]
+          "
+          style={{
+            backgroundImage: `
+              linear-gradient(
+                180deg,
+                #249098 0%,
+                #096c76 20%,
+                #014d57 48%,
+                #003941 78%,
+                #002b32 100%
+              )
+            `,
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+            filter: `
+              drop-shadow(0px 1px 0px rgba(255,255,255,0.35))
+              drop-shadow(1px 3px 2px rgba(0,37,43,0.22))
+            `,
+          }}
         >
-          Motswedi Rehabilitation Centre provides rehabilitation,
-          physiotherapy, education support, vocational skills training
-          and empowerment programmes that promote independence,
-          dignity and meaningful participation in society.
-        </motion.p>
+          MOTSWEDI
+        </motion.span>
 
-        {/* ACTION BUTTONS */}
+        {/* REHABILITATION CENTRE */}
+        <motion.span
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="
+            mx-auto mt-1 block
+            max-w-[340px]
+            text-center
+            text-[clamp(1.35rem,5.6vw,2rem)]
+            font-extrabold
+            leading-[1.1]
+            tracking-[-0.035em]
+            sm:text-[2.75rem]
+            md:mx-auto
+            md:mt-0
+            md:max-w-none
+            md:text-center
+            md:tracking-[-0.025em]
+            md:text-[4rem]
+            lg:text-[4.75rem]
+          "
+          style={{
+            backgroundImage: `
+              linear-gradient(
+                180deg,
+                #a3d36b 0%,
+                #80bd46 28%,
+                #6aa93b 55%,
+                #477f29 85%,
+                #37691e 100%
+              )
+            `,
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+            filter: `
+              drop-shadow(0px 1px 0px rgba(255,255,255,0.28))
+              drop-shadow(1px 2px 2px rgba(36,75,22,0.20))
+            `,
+          }}
+        >
+          REHABILITATION CENTRE
+        </motion.span>
+      </motion.h1>
+
+      {/* DESCRIPTION - CENTRED ON MOBILE AND DESKTOP */}
+      
+{/* DESCRIPTION - PREMIUM BOLD TYPOGRAPHY */}
+<motion.p
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1.1, duration: 0.8 }}
+  className="
+    mx-auto mt-10 max-w-[580px]
+    text-center
+    text-[15px]
+    font-semibold
+    leading-[1.9]
+    tracking-[-0.01em]
+    text-[#102e34]
+    drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]
+    md:mt-6
+    md:max-w-3xl
+    md:text-[20px]
+    md:font-semibold
+    md:leading-[1.65]
+  "
+>
+  Motswedi Rehabilitation Centre provides rehabilitation,
+  physiotherapy, education support, vocational skills training
+  and empowerment programmes that promote independence,
+  dignity and meaningful participation in society.
+</motion.p>
+
+
+      {/* ACTION BUTTONS */}
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.3, duration: 0.8 }}
+        className="
+          mt-auto flex flex-col gap-3 pt-17
+          sm:flex-row sm:gap-4
+          md:mt-8 md:justify-center md:pt-0
+        "
+      >
+        {/* GET HELP NOW */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3, duration: 0.8 }}
-          className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4 md:mt-8"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+          className="w-full sm:w-auto"
         >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
+          <Link
+            href="/contact"
+            className="
+              block w-full rounded-xl
+              bg-[#6aa93b]
+              px-6 py-3
+              text-center text-sm font-bold text-white
+              shadow-[0_18px_45px_rgba(106,169,59,0.28)]
+              transition hover:bg-[#5f9f34]
+              sm:w-auto
+              md:px-8 md:py-4 md:text-base
+            "
           >
-            <Link
-              href="/contact"
-              className="block w-full rounded-xl bg-[#6aa93b] px-6 py-3 text-center text-sm font-bold text-white shadow-[0_18px_45px_rgba(106,169,59,0.28)] transition hover:bg-[#5f9f34] sm:w-auto md:px-8 md:py-4 md:text-base"
-            >
-              GET HELP NOW
-            </Link>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            <Link
-              href="/programmes"
-              className="block w-full rounded-xl border border-[#6aa93b] bg-white/90 px-6 py-3 text-center text-sm font-bold text-[#014d57] shadow-[0_18px_45px_rgba(1,77,87,0.1)] backdrop-blur transition hover:bg-white sm:w-auto md:px-8 md:py-4 md:text-base"
-            >
-              OUR PROGRAMMES
-            </Link>
-          </motion.div>
+            GET HELP NOW
+          </Link>
         </motion.div>
 
+        {/* OUR PROGRAMMES */}
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+          className="w-full sm:w-auto"
+        >
+          <Link
+            href="/programmes"
+            className="
+              block w-full rounded-xl
+              border border-[#6aa93b]
+              bg-white/90
+              px-6 py-3
+              text-center text-sm font-bold text-[#014d57]
+              shadow-[0_18px_45px_rgba(1,77,87,0.1)]
+              backdrop-blur transition hover:bg-white
+              sm:w-auto
+              md:px-8 md:py-4 md:text-base
+            "
+          >
+            OUR PROGRAMMES
+          </Link>
+        </motion.div>
       </motion.div>
-    </div>
-  </section>
+    </motion.div>
+  </div>
+</section>
+
 
         {/* IMPACT STATS */}
         <section className="relative z-10 -mt-10 px-4 md:px-8">

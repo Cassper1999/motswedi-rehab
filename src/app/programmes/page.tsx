@@ -1,5 +1,6 @@
-﻿
-"use client";
+﻿"use client";
+
+import ProgrammesBackgroundSlideshow from "@/components/ProgrammesBackgroundSlideshow";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -67,55 +68,67 @@ const requirements = [
 export default function ProgrammesPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#f3efe6] via-[#e8f7ef] to-[#dff4ff] pb-20 pt-28 md:pt-36">
+      <ProgrammesBackgroundSlideshow />
       <div className="mx-auto max-w-7xl px-5 md:px-8">
 
-        {/* HERO TEXT */}
-        <div className="max-w-3xl">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-bold uppercase tracking-widest text-[#7ab648]"
-          >
-            Our Programmes
-          </motion.p>
+  
+{/* HERO TEXT - FIXED FOREGROUND VISIBILITY */}
+<div className="relative z-20 max-w-3xl">
 
-          <motion.h1 className="mt-4 text-4xl font-black leading-[1.05] text-[#014d57] md:text-6xl">
-            <motion.span
-              initial={{ opacity: 0, x: -60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="block text-[#014d57]"
-            >
-              CREATING PATHWAYS
-            </motion.span>
+  {/* OUR PROGRAMMES LABEL */}
+  <motion.p
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="relative z-20 font-bold uppercase tracking-widest text-[#7ab648]"
+  >
+    Our Programmes
+  </motion.p>
 
-            <motion.span
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.25, duration: 0.8 }}
-              className="block text-[#7ab648]"
-            >
-              TO INDEPENDENCE
-            </motion.span>
-          </motion.h1>
+  {/* MAIN HEADING */}
+  <motion.h1 className="relative z-20 mt-4 text-4xl font-black leading-[1.05] text-[#014d57] md:text-6xl">
 
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: 80 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="mt-6 h-1 rounded-full bg-cyan-400"
-          />
+    <motion.span
+      initial={{ opacity: 0, x: -60 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      className="block text-[#014d57]"
+    >
+      CREATING PATHWAYS
+    </motion.span>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="mt-6 text-base leading-relaxed text-gray-700 md:text-xl"
-          >
-            Training, rehabilitation and empowerment programmes designed to
-            unlock potential and build confidence.
-          </motion.p>
+    <motion.span
+      initial={{ opacity: 0, x: 60 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.25, duration: 0.8 }}
+      className="block text-[#7ab648]"
+    >
+      TO INDEPENDENCE
+    </motion.span>
+
+  </motion.h1>
+
+  {/* ACCENT LINE */}
+  <motion.div
+    initial={{ width: 0 }}
+    animate={{ width: 80 }}
+    transition={{ delay: 0.8, duration: 0.8 }}
+    className="relative z-20 mt-6 h-1 rounded-full bg-cyan-400"
+  />
+
+  {/* DESCRIPTION */}
+  <motion.p
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 1, duration: 0.8 }}
+    className="relative z-20 mt-6 text-base leading-relaxed text-gray-700 md:text-xl"
+  >
+    Training, rehabilitation and empowerment programmes designed to
+    unlock potential and build confidence.
+  </motion.p>
+
+
+
         </div>
 
         {/* PROGRAMME REQUIREMENTS */}

@@ -215,35 +215,35 @@ export default function AboutPage() {
         </motion.div>
 
         {/* OUR STORY */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-          className="mt-8 rounded-[1.5rem] bg-white/90 p-6 shadow-xl backdrop-blur-md md:mt-12 md:rounded-[2rem] md:p-10"
-        >
-          <h2 className="text-2xl font-bold text-[#014d57] md:text-3xl">
-            Our Story
-          </h2>
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 0.7 }}
+  className="mt-8 rounded-[1.5rem] bg-[#014d57] p-6 shadow-xl backdrop-blur-md md:mt-12 md:rounded-[2rem] md:p-10"
+>
+  <h2 className="text-2xl font-bold text-white md:text-3xl">
+    Our Story
+  </h2>
 
-          <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
-            The Community Based Rehabilitation Programme began in 1988 and the
-            centre was officially opened in 1995. &ldquo;Motswedi&rdquo;
-            meaning a fountain represents a fountain of hope for children,
-            youth and adults living with disabilities. The organisation was
-            established after the Mother&apos;s Union identified a growing
-            need for rehabilitation, care, education and support services for
-            people with disabilities. A survey conducted in 1992 revealed that
-            many individuals lacked access to stimulation, education, therapy
-            and proper care. In partnership with government, the community,
-            Botswana Christian Council (BCC) and NORAD, the centre developed a
-            Community Based Rehabilitation Programme. Over time it expanded
-            into physiotherapy, stimulation, vocational training, horticulture,
-            carpentry, dressmaking, cookery, poultry, hospitality and
-            handcrafts. In 2012, vocational programmes were accredited by BOTA,
-            now BQA.
-          </p>
-        </motion.div>
+  <p className="mt-4 text-base leading-relaxed text-white/90 md:mt-6 md:text-lg">
+    The Community Based Rehabilitation Programme began in 1988 and the
+    centre was officially opened in 1995. &ldquo;Motswedi&rdquo;
+    meaning a fountain represents a fountain of hope for children,
+    youth and adults living with disabilities. The organisation was
+    established after the Mother&apos;s Union identified a growing
+    need for rehabilitation, care, education and support services for
+    people with disabilities. A survey conducted in 1992 revealed that
+    many individuals lacked access to stimulation, education, therapy
+    and proper care. In partnership with government, the community,
+    Botswana Christian Council (BCC) and NORAD, the centre developed a
+    Community Based Rehabilitation Programme. Over time it expanded
+    into physiotherapy, stimulation, vocational training, horticulture,
+    carpentry, dressmaking, cookery, poultry, hospitality and
+    handcrafts. In 2012, vocational programmes were accredited by BOTA,
+    now BQA.
+  </p>
+</motion.div>
 
         {/* WHY STARTED */}
         <motion.div
@@ -277,24 +277,27 @@ export default function AboutPage() {
         </motion.div>
 
        {/* COMMUNITY */}
+
+{/* THE COMMUNITY WE SERVE */}
 <motion.div
   initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, amount: 0.3 }}
   transition={{ duration: 0.7 }}
-  className="mt-8 rounded-[1.5rem] bg-white/90 p-6 shadow-xl backdrop-blur-md md:mt-12 md:rounded-[2rem] md:p-10"
+  className="mt-8 rounded-[1.5rem] bg-[#014d57] p-6 shadow-xl backdrop-blur-md md:mt-12 md:rounded-[2rem] md:p-10"
 >
-  <h2 className="text-2xl font-bold text-[#014d57] md:text-3xl">
+  <h2 className="text-2xl font-bold text-white md:text-3xl">
     The Community We Serve
   </h2>
 
-  <p className="mt-4 text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
+  <p className="mt-4 text-base leading-relaxed text-white/90 md:mt-6 md:text-lg">
     Motswedi Rehabilitation Centre serves children, youth and adults living
     with disabilities in Mochudi and surrounding communities across Botswana.
     We work closely with families, caregivers, schools, government, churches
     and stakeholders to promote inclusion and quality of life.
   </p>
 </motion.div>
+
 
 {/* MISSION, VISION, GOAL AND CORE VALUES */}
 <motion.article
@@ -434,16 +437,19 @@ export default function AboutPage() {
             department: "Physiotherapy",
             units: ["Rehabilitation", "Hostel"],
           },
-          {
-            department: "Programmes",
-            units: [
-              "Stimulation",
-              "Carpentry & Joinery",
-              "Horticulture",
-              "Dressmaking and Tailoring",
-              "Cookery and Housekeeping",
-            ],
-          },
+          
+{
+  department: "Programmes",
+  units: [
+    "Stimulation",
+    "Carpentry & Joinery",
+    "Horticulture",
+    "Dressmaking and Tailoring",
+    "Cookery and Housekeeping",
+    "ICT",
+  ],
+},
+
           {
             department: "Administration",
             units: [
