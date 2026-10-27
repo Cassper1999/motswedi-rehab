@@ -241,50 +241,51 @@ export default function Home() {
           MOTSWEDI
         </motion.span>
 
-        {/* REHABILITATION CENTRE */}
-        <motion.span
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="
-            mx-auto mt-1 block
-            max-w-[340px]
-            text-center
-            text-[clamp(1.05rem,5.2vw,2rem)]
-            font-extrabold
-            leading-[1.1]
-            tracking-[-0.035em]
-            sm:text-[2.75rem]
-            md:mx-auto
-            md:mt-0
-            md:max-w-none
-            md:text-center
-            md:tracking-[-0.025em]
-            md:text-[4rem]
-            lg:text-[4.75rem]
-          "
-          style={{
-            backgroundImage: `
-              linear-gradient(
-                180deg,
-                #a3d36b 0%,
-                #80bd46 28%,
-                #6aa93b 55%,
-                #477f29 85%,
-                #37691e 100%
-              )
-            `,
-            backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            color: "transparent",
-            filter: `
-              drop-shadow(0px 1px 0px rgba(255,255,255,0.28))
-              drop-shadow(1px 2px 2px rgba(36,75,22,0.20))
-            `,
-          }}
-        >
-          REHABILITATION CENTRE
-        </motion.span>
+        
+{/* REHABILITATION CENTRE - PREMIUM DEEP GREEN */}
+<motion.span
+  initial={{ opacity: 0, x: 60 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ delay: 0.5, duration: 0.8 }}
+  className="
+    mx-auto mt-1 block
+    max-w-[340px]
+    text-center
+    text-[clamp(2.05rem,5.2vw,2rem)]
+    font-extrabold
+    leading-[1.1]
+    tracking-[-0.035em]
+    sm:text-[2.75rem]
+    md:mx-auto
+    md:mt-0
+    md:max-w-none
+    md:text-center
+    md:tracking-[-0.025em]
+    md:text-[4rem]
+    lg:text-[4.75rem]
+  "
+  style={{
+    backgroundImage: `
+      linear-gradient(
+        180deg,
+        #6aa93b 0%,
+        #548e2b 35%,
+        #397321 70%,
+        #28571a 100%
+      )
+    `,
+    backgroundClip: "text",
+    WebkitBackgroundClip: "text",
+    color: "transparent",
+    filter: `
+      drop-shadow(0px 1px 1px rgba(255,255,255,0.45))
+      drop-shadow(1px 2px 2px rgba(20,55,15,0.38))
+    `,
+  }}
+>
+  REHABILITATION CENTRE
+</motion.span>
+
       </motion.h1>
 
       {/* DESCRIPTION - CENTRED ON MOBILE AND DESKTOP */}
